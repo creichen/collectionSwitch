@@ -1,6 +1,8 @@
 package de.heidelberg.pvs.diego.collectionswitch.context;
 
 import java.util.Collection;
+import se.lth.util.HashSetUniversal;
+import se.lth.util.LinkedHashSetUniversal;
 import java.util.Set;
 
 import se.lth.util.*;

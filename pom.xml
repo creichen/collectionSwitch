@@ -68,6 +68,14 @@
                         <version>7.0.10</version>
                 </dependency>
 
+                <!-- https://mvnrepository.com/artifact/edu.stanford.nlp/stanford-corenlp -->
+                <!-- Stanford's NLP -->
+                <dependency>
+                        <groupId>edu.stanford.nlp</groupId>
+                        <artifactId>stanford-corenlp</artifactId>
+                        <version>3.7.0</version>
+                </dependency>
+
                 <!-- APACHE COMMONS -->
                 <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-collections4 -->
                 <dependency>
@@ -98,13 +106,6 @@
 
                 <dependency>
                         <groupId>org.eclipse.collections</groupId>
-                        <artifactId>eclipse-collections-testutils</artifactId>
-                        <version>8.0.0</version>
-                        <scope>test</scope>
-                </dependency>
-
-                <dependency>
-                        <groupId>org.eclipse.collections</groupId>
                         <artifactId>eclipse-collections-forkjoin</artifactId>
                         <version>8.0.0</version>
                 </dependency>
@@ -114,6 +115,13 @@
                         <groupId>org.openjdk.jol</groupId>
                         <artifactId>jol-core</artifactId>
                         <version>0.5</version>
+                </dependency>
+
+                <dependency>
+                        <groupId>org.eclipse.collections</groupId>
+                        <artifactId>eclipse-collections-testutils</artifactId>
+                        <version>8.0.0</version>
+                        <scope>test</scope>
                 </dependency>
 
                 <!-- JLIBS -->

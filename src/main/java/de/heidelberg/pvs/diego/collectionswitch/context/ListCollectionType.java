@@ -82,6 +82,7 @@ public enum ListCollectionType {
                         return new ArrayListUniversal<E>(c);
                 }
         }
+
         public <E> ArrayListInterface<E> createArrayListInterface( ) {
             return (ArrayListInterface) createList();
         }
