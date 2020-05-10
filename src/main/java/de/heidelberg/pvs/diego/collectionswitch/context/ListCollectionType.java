@@ -5,82 +5,82 @@ import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
+import se.lth.util.ArrayListUniversal;
+import se.lth.util.LinkedListUniversal;
+
 import de.heidelberg.pvs.diego.collectionswitch.adaptive.AdaptiveList;
-import de.heidelberg.pvs.diego.collectionswitch.custom.lists.HashArrayList;
+import de.heidelberg.pvs.diego.collectionswitch.custom.lists.HashArrayListUniversal;
 
 public enum ListCollectionType {
 
-	JDK_ARRAYLIST, 
-	JDK_LINKEDLIST, 
-	ONLINEADAPTER_HASHARRAYLIST, 
-	ONLINEADAPTER_ADAPTIVELIST;
+        JDK_ARRAYLIST,
+        JDK_LINKEDLIST,
+        ONLINEADAPTER_HASHARRAYLIST,
+        ONLINEADAPTER_ADAPTIVELIST;
 
-	public <E> List<E> createList(int initialCapacity) {
+        public <E> List<E> createList(int initialCapacity) {
 
-		switch (this) {
+                switch (this) {
 
-		case JDK_ARRAYLIST:
-			return new ArrayList<E>(initialCapacity);
+                case JDK_ARRAYLIST:
+                        return new ArrayListUniversal<E>(initialCapacity);
 
-		case ONLINEADAPTER_ADAPTIVELIST:
-			return new AdaptiveList<E>(initialCapacity);
-		
-		case ONLINEADAPTER_HASHARRAYLIST:
-			return new HashArrayList<E>(initialCapacity);
+                case ONLINEADAPTER_ADAPTIVELIST:
+                        return new AdaptiveList<E>(initialCapacity);
 
-		case JDK_LINKEDLIST:
-			return new LinkedList<E>();
+                case ONLINEADAPTER_HASHARRAYLIST:
+                        return new HashArrayListUniversal<E>(initialCapacity);
 
-		default:
-			return new ArrayList<E>(initialCapacity);
-		}
+                case JDK_LINKEDLIST:
+                        return new LinkedListUniversal<E>();
 
-	}
+                default:
+                        return new ArrayListUniversal<E>(initialCapacity);
+                }
 
-	public <E> List<E> createList() {
+        }
 
-		switch (this) {
+        public <E> List<E> createList() {
 
-		case JDK_ARRAYLIST:
-			return new ArrayList<E>();
+                switch (this) {
 
-		case ONLINEADAPTER_HASHARRAYLIST:
-			return new HashArrayList<E>();
-			
-		case ONLINEADAPTER_ADAPTIVELIST:
-			return new AdaptiveList<E>();
+                case JDK_ARRAYLIST:
+                        return new ArrayListUniversal<E>();
 
-		case JDK_LINKEDLIST:
-			return new LinkedList<E>();
+                case ONLINEADAPTER_HASHARRAYLIST:
+                        return new HashArrayListUniversal<E>();
 
-		default:
-			return new ArrayList<E>();
-			
-		}
+                case ONLINEADAPTER_ADAPTIVELIST:
+                        return new AdaptiveList<E>();
 
-	}
+                case JDK_LINKEDLIST:
+                        return new LinkedListUniversal<E>();
 
-	public <E> List<E> createList(Collection<? extends E> c) {
-		
-		switch (this) {
+                default:
+                        return new ArrayListUniversal<E>();
 
-		case JDK_ARRAYLIST:
-			return new ArrayList<E>(c);
+                }
 
-		case ONLINEADAPTER_HASHARRAYLIST:
-			return new HashArrayList<E>(c);
-			
-		case ONLINEADAPTER_ADAPTIVELIST:
-			return new AdaptiveList<E>(c);
+        }
 
-		case JDK_LINKEDLIST:
-			return new LinkedList<E>(c);
+        public <E> List<E> createList(Collection<? extends E> c) {
 
-		default:
-			return new ArrayList<E>(c);
-		}
+                switch (this) {
 
-		
-	}
+                case JDK_ARRAYLIST:
+                        return new ArrayListUniversal<E>(c);
 
+                case ONLINEADAPTER_HASHARRAYLIST:
+                        return new HashArrayListUniversal<E>(c);
+
+                case ONLINEADAPTER_ADAPTIVELIST:
+                        return new AdaptiveList<E>(c);
+
+                case JDK_LINKEDLIST:
+                        return new LinkedListUniversal<E>(c);
+
+                default:
+                        return new ArrayListUniversal<E>(c);
+                }
+        }
 }
