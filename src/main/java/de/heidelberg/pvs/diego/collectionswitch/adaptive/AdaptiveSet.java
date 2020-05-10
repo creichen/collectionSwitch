@@ -9,126 +9,126 @@ import net.openhft.koloboke.collect.set.hash.HashObjSets;
 
 public class AdaptiveSet<E> implements Set<E> {
 
-	private static final int TURNING_POINT = 40;
+        private static final int TURNING_POINT = 40;
 
-	Set<E> set;
+        Set<E> set;
 
-	private boolean transformed;
+        private boolean transformed;
 
-	public AdaptiveSet() {
-		super();
-		set = new ArraySet<E>();
-	}
+        public AdaptiveSet() {
+                super();
+                set = new ArraySet<E>();
+        }
 
-	public AdaptiveSet(int capacity) {
-		super();
-		if (capacity < TURNING_POINT) {
-			set = new ArraySet<E>(capacity);
-		} else  {
-			set = HashObjSets.newMutableSet(capacity);
-			transformed = true;
-		} 
-	}
+        public AdaptiveSet(int capacity) {
+                super();
+                if (capacity < TURNING_POINT) {
+                        set = new ArraySet<E>(capacity);
+                } else  {
+                        set = HashObjSets.newMutableSet(capacity);
+                        transformed = true;
+                }
+        }
 
-	public AdaptiveSet(int capacity, float loadFactor) {
-		super();
-		
-		if (capacity < TURNING_POINT) {
-			set = new ArraySet<E>(capacity);
-		} else  {
-			set = HashObjSets.newMutableSet(capacity);
-			transformed = true;
-		} 
-	}
+        public AdaptiveSet(int capacity, float loadFactor) {
+                super();
 
-	public AdaptiveSet(Collection<? extends E> setToCopy) {
+                if (capacity < TURNING_POINT) {
+                        set = new ArraySet<E>(capacity);
+                } else  {
+                        set = HashObjSets.newMutableSet(capacity);
+                        transformed = true;
+                }
+        }
 
-		if (setToCopy.size() < TURNING_POINT) {
-			this.set = new ArraySet<E>();
-			this.set.addAll(setToCopy);
-		} else  {
-			this.set = HashObjSets.newMutableSet(setToCopy);
-			transformed = true;
-		} 
+        public AdaptiveSet(Collection<? extends E> setToCopy) {
 
-	}
+                if (setToCopy.size() < TURNING_POINT) {
+                        this.set = new ArraySet<E>();
+                        this.set.addAll(setToCopy);
+                } else  {
+                        this.set = HashObjSets.newMutableSet(setToCopy);
+                        transformed = true;
+                }
 
-	private void manageImplementation(int delta) {
-		int newSize = size() + delta;
-		
-		// Double-check on transformed
-		if (newSize > TURNING_POINT && !transformed) {
-			set = HashObjSets.newMutableSet(set);
-			transformed = true;
-		} 
-		
-	}
+        }
 
-	public boolean add(E e) {
-		if(!transformed) {
-			manageImplementation(1);
-		}
-		return set.add(e);
-	}
+        private void manageImplementation(int delta) {
+                int newSize = size() + delta;
 
-	public boolean addAll(Collection<? extends E> c) {
-		if(!transformed) {
-			manageImplementation(c.size());
-		}
-		manageImplementation(c.size());
-		return set.addAll(c);
-	}
+                // Double-check on transformed
+                if (newSize > TURNING_POINT && !transformed) {
+                        set = HashObjSets.newMutableSet(set);
+                        transformed = true;
+                }
 
-	public void clear() {
-		set.clear();
-	}
+        }
 
-	public boolean contains(Object o) {
-		return set.contains(o);
-	}
+        public boolean add(E e) {
+                if(!transformed) {
+                        manageImplementation(1);
+                }
+                return set.add(e);
+        }
 
-	public boolean containsAll(Collection<?> c) {
-		return set.containsAll(c);
-	}
+        public boolean addAll(Collection<? extends E> c) {
+                if(!transformed) {
+                        manageImplementation(c.size());
+                }
+                manageImplementation(c.size());
+                return set.addAll(c);
+        }
 
-	public boolean equals(Object o) {
-		return set.equals(o);
-	}
+        public void clear() {
+                set.clear();
+        }
 
-	public int hashCode() {
-		return set.hashCode();
-	}
+        public boolean contains(Object o) {
+                return set.contains(o);
+        }
 
-	public boolean isEmpty() {
-		return set.isEmpty();
-	}
+        public boolean containsAll(Collection<?> c) {
+                return set.containsAll(c);
+        }
 
-	public Iterator<E> iterator() {
-		return set.iterator();
-	}
+        public boolean equals(Object o) {
+                return set.equals(o);
+        }
 
-	public boolean remove(Object o) {
-		return set.remove(o);
-	}
+        public int hashCode() {
+                return set.hashCode();
+        }
 
-	public boolean removeAll(Collection<?> c) {
-		return set.removeAll(c);
-	}
+        public boolean isEmpty() {
+                return set.isEmpty();
+        }
 
-	public boolean retainAll(Collection<?> c) {
-		return set.retainAll(c);
-	}
+        public Iterator<E> iterator() {
+                return set.iterator();
+        }
 
-	public int size() {
-		return set.size();
-	}
+        public boolean remove(Object o) {
+                return set.remove(o);
+        }
 
-	public Object[] toArray() {
-		return set.toArray();
-	}
+        public boolean removeAll(Collection<?> c) {
+                return set.removeAll(c);
+        }
 
-	public Object[] toArray(Object[] a) {
-		return set.toArray(a);
-	}
+        public boolean retainAll(Collection<?> c) {
+                return set.retainAll(c);
+        }
+
+        public int size() {
+                return set.size();
+        }
+
+        public Object[] toArray() {
+                return set.toArray();
+        }
+
+        public Object[] toArray(Object[] a) {
+                return set.toArray(a);
+        }
 
 }
