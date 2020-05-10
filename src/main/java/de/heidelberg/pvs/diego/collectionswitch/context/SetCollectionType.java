@@ -8,7 +8,7 @@ import java.util.Set;
 import de.heidelberg.pvs.diego.collectionswitch.adaptive.AdaptiveSetUniversal;
 import de.heidelberg.pvs.diego.collectionswitch.THashSetUniversal;
 import de.heidelberg.pvs.diego.collectionswitch.UnifiedSetUniversal;
-import edu.stanford.nlp.util.ArraySet;
+import de.heidelberg.pvs.diego.collectionswitch.ArraySetUniversal;
 import net.openhft.koloboke.collect.set.hash.HashObjSets;
 
 public enum SetCollectionType {
@@ -41,10 +41,10 @@ public enum SetCollectionType {
                         return new UnifiedSetUniversal<E>(initialCapacity);
 
                 case NLP_ARRAYSET:
-                        return new ArraySet<E>(initialCapacity);
+                        return new ArraySetUniversal<E>(initialCapacity);
 
                         // case ONLINEADAPTER_ARRAYSET:
-                        // return new ArraySet_Naive(initialCapacity);
+                        // return new ArraySetUniversal_Naive(initialCapacity);
 
                 case ONLINEADAPTER_ADAPTIVESET:
                         return new AdaptiveSetUniversal<E>(initialCapacity);
@@ -76,10 +76,10 @@ public enum SetCollectionType {
                         return new UnifiedSetUniversal<E>();
 
                 case NLP_ARRAYSET:
-                        return new ArraySet<E>();
+                        return new ArraySetUniversal<E>();
 
                         // case ONLINEADAPTER_ARRAYSET:
-                        // return new ArraySet_Naive(initialCapacity);
+                        // return new ArraySetUniversal_Naive(initialCapacity);
 
                 case ONLINEADAPTER_ADAPTIVESET:
                         return new AdaptiveSetUniversal<E>();
@@ -111,12 +111,12 @@ public enum SetCollectionType {
                         return new UnifiedSetUniversal<E>(setToCopy);
 
                 case NLP_ARRAYSET:
-                        Set<E> set2 = new ArraySet<E>();
+                        Set<E> set2 = new ArraySetUniversal<E>();
                         set2.addAll(setToCopy);
                         return set2;
 
                         // case ONLINEADAPTER_ARRAYSET:
-                        // return new ArraySet_Naive(initialCapacity);
+                        // return new ArraySetUniversal_Naive(initialCapacity);
 
                 case ONLINEADAPTER_ADAPTIVESET:
                         return new AdaptiveSetUniversal<E>(setToCopy);
