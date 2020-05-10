@@ -6,7 +6,7 @@ import java.util.Map;
 
 import org.eclipse.collections.impl.map.mutable.UnifiedMap;
 
-import de.heidelberg.pvs.diego.collectionswitch.adaptive.AdaptiveMap;
+import de.heidelberg.pvs.diego.collectionswitch.adaptive.AdaptiveMapUniversal;
 import edu.stanford.nlp.util.ArrayMap;
 import gnu.trove.map.hash.THashMap;
 import net.openhft.koloboke.collect.map.hash.HashObjObjMaps;
@@ -37,7 +37,7 @@ public enum MapCollectionType {
                         return HashObjObjMaps.newMutableMap(initialCapacity);
 
                 case ONLINEADAPTER_ADAPTIVEMAP:
-                        return new AdaptiveMap<K, V>(initialCapacity);
+                        return new AdaptiveMapUniversal<K, V>(initialCapacity);
 
                 case JDK_LINKEDHASHMAP:
                         return new LinkedHashMapUniversal<K, V>(initialCapacity);
@@ -75,7 +75,7 @@ public enum MapCollectionType {
                         return HashObjObjMaps.newMutableMap();
 
                 case ONLINEADAPTER_ADAPTIVEMAP:
-                        return new AdaptiveMap<K, V>();
+                        return new AdaptiveMapUniversal<K, V>();
 
                 case JDK_LINKEDHASHMAP:
                         return new LinkedHashMapUniversal<K, V>();
@@ -112,7 +112,7 @@ public enum MapCollectionType {
                         return HashObjObjMaps.newMutableMap(mapToCopy);
 
                 case ONLINEADAPTER_ADAPTIVEMAP:
-                        return new AdaptiveMap<K, V>(mapToCopy);
+                        return new AdaptiveMapUniversal<K, V>(mapToCopy);
 
                 case JDK_LINKEDHASHMAP:
                         return new LinkedHashMapUniversal<K, V>(mapToCopy);
