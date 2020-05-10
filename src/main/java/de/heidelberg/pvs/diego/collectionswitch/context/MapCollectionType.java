@@ -1,7 +1,7 @@
 package de.heidelberg.pvs.diego.collectionswitch.context;
 
 import se.lth.util.HashMapUniversal;
-import java.util.LinkedHashMap;
+import se.lth.util.LinkedHashMapUniversal;
 import java.util.Map;
 
 import org.eclipse.collections.impl.map.mutable.UnifiedMap;
@@ -40,7 +40,7 @@ public enum MapCollectionType {
                         return new AdaptiveMap<K, V>(initialCapacity);
 
                 case JDK_LINKEDHASHMAP:
-                        return new LinkedHashMap<K, V>(initialCapacity);
+                        return new LinkedHashMapUniversal<K, V>(initialCapacity);
 
                 case FASTUTILS_HASHMAP:
                         return new THashMap<K, V>(initialCapacity);
@@ -78,7 +78,7 @@ public enum MapCollectionType {
                         return new AdaptiveMap<K, V>();
 
                 case JDK_LINKEDHASHMAP:
-                        return new LinkedHashMap<K, V>();
+                        return new LinkedHashMapUniversal<K, V>();
 
                 case FASTUTILS_HASHMAP:
                         return new THashMap<K, V>();
@@ -115,7 +115,7 @@ public enum MapCollectionType {
                         return new AdaptiveMap<K, V>(mapToCopy);
 
                 case JDK_LINKEDHASHMAP:
-                        return new LinkedHashMap<K, V>(mapToCopy);
+                        return new LinkedHashMapUniversal<K, V>(mapToCopy);
 
                 case FASTUTILS_HASHMAP:
                         return new THashMap<K, V>(mapToCopy);
