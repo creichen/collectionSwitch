@@ -4,11 +4,12 @@ import se.lth.util.HashMapUniversal;
 import se.lth.util.LinkedHashMapUniversal;
 import java.util.Map;
 
-import org.eclipse.collections.impl.map.mutable.UnifiedMap;
-
 import de.heidelberg.pvs.diego.collectionswitch.adaptive.AdaptiveMapUniversal;
+import de.heidelberg.pvs.diego.collectionswitch.THashMapUniversal;
+import de.heidelberg.pvs.diego.collectionswitch.UnifiedMapUniversal;
+
 import edu.stanford.nlp.util.ArrayMap;
-import gnu.trove.map.hash.THashMap;
+
 import net.openhft.koloboke.collect.map.hash.HashObjObjMaps;
 import vlsi.utils.CompactHashMap;
 
@@ -43,10 +44,10 @@ public enum MapCollectionType {
                         return new LinkedHashMapUniversal<K, V>(initialCapacity);
 
                 case FASTUTILS_HASHMAP:
-                        return new THashMap<K, V>(initialCapacity);
+                        return new THashMapUniversal<K, V>(initialCapacity);
 
                 case GSCOLLECTIONS_UNIFIEDMAP:
-                        return new UnifiedMap<K, V>(initialCapacity);
+                        return new UnifiedMapUniversal<K, V>(initialCapacity);
 
                 case GOOGLE_ARRAYMAP:
                         return new com.google.api.client.util.ArrayMap<K, V>();
@@ -81,10 +82,10 @@ public enum MapCollectionType {
                         return new LinkedHashMapUniversal<K, V>();
 
                 case FASTUTILS_HASHMAP:
-                        return new THashMap<K, V>();
+                        return new THashMapUniversal<K, V>();
 
                 case GSCOLLECTIONS_UNIFIEDMAP:
-                        return new UnifiedMap<K, V>();
+                        return new UnifiedMapUniversal<K, V>();
 
                 case GOOGLE_ARRAYMAP:
                         return new com.google.api.client.util.ArrayMap<K, V>();
@@ -118,10 +119,10 @@ public enum MapCollectionType {
                         return new LinkedHashMapUniversal<K, V>(mapToCopy);
 
                 case FASTUTILS_HASHMAP:
-                        return new THashMap<K, V>(mapToCopy);
+                        return new THashMapUniversal<K, V>(mapToCopy);
 
                 case GSCOLLECTIONS_UNIFIEDMAP:
-                        return new UnifiedMap<K, V>(mapToCopy);
+                        return new UnifiedMapUniversal<K, V>(mapToCopy);
 
                 case GOOGLE_ARRAYMAP:
                         Map<K, V> map = new com.google.api.client.util.ArrayMap<K, V>();
