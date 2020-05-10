@@ -5,12 +5,10 @@ import se.lth.util.HashSetUniversal;
 import se.lth.util.LinkedHashSetUniversal;
 import java.util.Set;
 
-import org.eclipse.collections.impl.set.mutable.UnifiedSet;
-
 import de.heidelberg.pvs.diego.collectionswitch.adaptive.AdaptiveSetUniversal;
 import de.heidelberg.pvs.diego.collectionswitch.THashSetUniversal;
+import de.heidelberg.pvs.diego.collectionswitch.UnifiedSetUniversal;
 import edu.stanford.nlp.util.ArraySet;
-import gnu.trove.set.hash.THashSet;
 import net.openhft.koloboke.collect.set.hash.HashObjSets;
 
 public enum SetCollectionType {
@@ -40,7 +38,7 @@ public enum SetCollectionType {
                         return new THashSetUniversal<E>(initialCapacity);
 
                 case GSCOLLECTIONS_UNIFIEDSET:
-                        return new UnifiedSet<E>(initialCapacity);
+                        return new UnifiedSetUniversal<E>(initialCapacity);
 
                 case NLP_ARRAYSET:
                         return new ArraySet<E>(initialCapacity);
@@ -75,7 +73,7 @@ public enum SetCollectionType {
                         return new THashSetUniversal<E>();
 
                 case GSCOLLECTIONS_UNIFIEDSET:
-                        return new UnifiedSet<E>();
+                        return new UnifiedSetUniversal<E>();
 
                 case NLP_ARRAYSET:
                         return new ArraySet<E>();
@@ -110,7 +108,7 @@ public enum SetCollectionType {
                         return new THashSetUniversal<E>(setToCopy);
 
                 case GSCOLLECTIONS_UNIFIEDSET:
-                        return new UnifiedSet<E>(setToCopy);
+                        return new UnifiedSetUniversal<E>(setToCopy);
 
                 case NLP_ARRAYSET:
                         Set<E> set2 = new ArraySet<E>();
