@@ -7,7 +7,8 @@ import java.util.Set;
 
 import org.eclipse.collections.impl.set.mutable.UnifiedSet;
 
-import de.heidelberg.pvs.diego.collectionswitch.adaptive.AdaptiveSet;
+import de.heidelberg.pvs.diego.collectionswitch.adaptive.AdaptiveSetUniversal;
+import de.heidelberg.pvs.diego.collectionswitch.THashSetUniversal;
 import edu.stanford.nlp.util.ArraySet;
 import gnu.trove.set.hash.THashSet;
 import net.openhft.koloboke.collect.set.hash.HashObjSets;
@@ -36,7 +37,7 @@ public enum SetCollectionType {
                         return new LinkedHashSetUniversal<E>(initialCapacity);
 
                 case FASTUTILS_HASHSET:
-                        return new THashSet<E>(initialCapacity);
+                        return new THashSetUniversal<E>(initialCapacity);
 
                 case GSCOLLECTIONS_UNIFIEDSET:
                         return new UnifiedSet<E>(initialCapacity);
@@ -48,7 +49,7 @@ public enum SetCollectionType {
                         // return new ArraySet_Naive(initialCapacity);
 
                 case ONLINEADAPTER_ADAPTIVESET:
-                        return new AdaptiveSet<E>(initialCapacity);
+                        return new AdaptiveSetUniversal<E>(initialCapacity);
 
                 default:
                         return new HashSetUniversal<E>(initialCapacity);
@@ -71,7 +72,7 @@ public enum SetCollectionType {
                         return new LinkedHashSetUniversal<E>();
 
                 case FASTUTILS_HASHSET:
-                        return new THashSet<E>();
+                        return new THashSetUniversal<E>();
 
                 case GSCOLLECTIONS_UNIFIEDSET:
                         return new UnifiedSet<E>();
@@ -83,7 +84,7 @@ public enum SetCollectionType {
                         // return new ArraySet_Naive(initialCapacity);
 
                 case ONLINEADAPTER_ADAPTIVESET:
-                        return new AdaptiveSet<E>();
+                        return new AdaptiveSetUniversal<E>();
 
                 default:
                         return new HashSetUniversal<E>();
@@ -106,7 +107,7 @@ public enum SetCollectionType {
                         return new LinkedHashSetUniversal<E>(setToCopy);
 
                 case FASTUTILS_HASHSET:
-                        return new THashSet<E>(setToCopy);
+                        return new THashSetUniversal<E>(setToCopy);
 
                 case GSCOLLECTIONS_UNIFIEDSET:
                         return new UnifiedSet<E>(setToCopy);
@@ -120,7 +121,7 @@ public enum SetCollectionType {
                         // return new ArraySet_Naive(initialCapacity);
 
                 case ONLINEADAPTER_ADAPTIVESET:
-                        return new AdaptiveSet<E>(setToCopy);
+                        return new AdaptiveSetUniversal<E>(setToCopy);
 
                 default:
                         return new HashSetUniversal<E>(setToCopy);
