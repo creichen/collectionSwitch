@@ -7,6 +7,7 @@ import java.util.Map;
 import de.heidelberg.pvs.diego.collectionswitch.adaptive.AdaptiveMapUniversal;
 import de.heidelberg.pvs.diego.collectionswitch.THashMapUniversal;
 import de.heidelberg.pvs.diego.collectionswitch.UnifiedMapUniversal;
+import de.heidelberg.pvs.diego.collectionswitch.ArrayMapUniversal;
 
 import edu.stanford.nlp.util.ArrayMap;
 
@@ -50,7 +51,7 @@ public enum MapCollectionType {
                         return new UnifiedMapUniversal<K, V>(initialCapacity);
 
                 case GOOGLE_ARRAYMAP:
-                        return new com.google.api.client.util.ArrayMap<K, V>();
+                        return new ArrayMapUniversal<K, V>();
 
                 case NLP_ARRAYMAP:
                         return new ArrayMap<K, V>(initialCapacity);
@@ -88,7 +89,7 @@ public enum MapCollectionType {
                         return new UnifiedMapUniversal<K, V>();
 
                 case GOOGLE_ARRAYMAP:
-                        return new com.google.api.client.util.ArrayMap<K, V>();
+                        return new ArrayMapUniversal<K, V>();
 
                 case NLP_ARRAYMAP:
                         return new ArrayMap<K, V>();
@@ -125,7 +126,7 @@ public enum MapCollectionType {
                         return new UnifiedMapUniversal<K, V>(mapToCopy);
 
                 case GOOGLE_ARRAYMAP:
-                        Map<K, V> map = new com.google.api.client.util.ArrayMap<K, V>();
+                        Map<K, V> map = new ArrayMapUniversal<K, V>();
                         map.putAll(mapToCopy);
                         return map;
 
