@@ -8,87 +8,133 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.Set;
 
+import se.lth.util.*;
+import se.lth.util.concurrent.*;
+
 import de.heidelberg.pvs.diego.collectionswitch.context.SetAllocationContext;
 import de.heidelberg.pvs.diego.collectionswitch.context.SetAllocationContextInfo;
 import de.heidelberg.pvs.diego.collectionswitch.context.SetCollectionType;
 
 public class LogSetAllocationContext implements SetAllocationContext {
-	
-	private static final int FREQUENCY = 1000;
 
-	SetAllocationContextInfo context;
-	static Format formatter = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss-SSS");
-	
-	PrintWriter writer;
-	
-	int count = 0;
-	
-	public LogSetAllocationContext(SetAllocationContextInfo context, String identifier, String dir) {
-		super();
-		this.context = context;
-		Date date = new Date(System.currentTimeMillis());
-		
-		try{
-			writer = new PrintWriter(dir + "/" + identifier + "__-__" +  formatter.format(date)  + ".txt", "UTF-8");
-		    writer.println("Context initialized");
-		    writer.println("Collecton Type: " + this.context.getCurrentCollectionType());
-		    writer.flush();
-		} catch (IOException e) {
-			if(writer != null) {
-				writer.close();
-			}
-		   // do something
-		}
-	}
+        private static final int FREQUENCY = 1000;
 
-	
-	@Override
-	public <E> Set<E> createSet() {
-		logSetCreation();
-		return context.createSet();
-	}
+        SetAllocationContextInfo context;
+        static Format formatter = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss-SSS");
+
+        PrintWriter writer;
+
+        int count = 0;
+
+        public LogSetAllocationContext(SetAllocationContextInfo context, String identifier, String dir) {
+                super();
+                this.context = context;
+                Date date = new Date(System.currentTimeMillis());
+
+                try{
+                        writer = new PrintWriter(dir + "/" + identifier + "__-__" +  formatter.format(date)  + ".txt", "UTF-8");
+                    writer.println("Context initialized");
+                    writer.println("Collecton Type: " + this.context.getCurrentCollectionType());
+                    writer.flush();
+                } catch (IOException e) {
+                        if(writer != null) {
+                                writer.close();
+                        }
+                   // do something
+                }
+        }
 
 
-	private void logSetCreation() {
-		count++;
-		if(count % FREQUENCY == 0) {
-			writer.println(String.format("Created %d sets", count ));
-			writer.flush();
-		}
-		
-	}
+        @Override
+        public <E> Set<E> createSet() {
+                logSetCreation();
+                return context.createSet();
+        }
 
 
-	@Override
-	public <E> Set<E> createSet(int initialCapacity) {
-		logSetCreation();
-		return context.createSet(initialCapacity);
-	}
+        private void logSetCreation() {
+                count++;
+                if(count % FREQUENCY == 0) {
+                        writer.println(String.format("Created %d sets", count ));
+                        writer.flush();
+                }
+
+        }
 
 
-	@Override
-	public <E> Set<E> createSet(Collection<? extends E> set) {
-		logSetCreation();
-		return context.createSet(set);
-	}
+        @Override
+        public <E> Set<E> createSet(int initialCapacity) {
+                logSetCreation();
+                return context.createSet(initialCapacity);
+        }
 
 
-	@Override
-	public void updateCollectionType(SetCollectionType type) {
-		String beforeState = context.getCurrentCollectionType();
-		context.updateCollectionType(type);
-		String afterState = context.getCurrentCollectionType();
-		
-		if(!beforeState.equals(afterState)) {
-			writer.println(String.format("%d sets created so far.", count));
-			writer.println("Type updated from " + beforeState + " -- to --" + afterState);
-			writer.flush();
-		}
-	}
+        @Override
+        public <E> Set<E> createSet(Collection<? extends E> set) {
+                logSetCreation();
+                return context.createSet(set);
+        }
 
-	
 
-	
-	
+        @Override
+        public void updateCollectionType(SetCollectionType type) {
+                String beforeState = context.getCurrentCollectionType();
+                context.updateCollectionType(type);
+                String afterState = context.getCurrentCollectionType();
+
+                if(!beforeState.equals(afterState)) {
+                        writer.println(String.format("%d sets created so far.", count));
+                        writer.println("Type updated from " + beforeState + " -- to --" + afterState);
+                        writer.flush();
+                }
+        }
+
+        public <E> HashSetInterface createHashSetInterface( ) {
+            throw new java.lang.UnsupportedOperationException();
+        }
+
+        public <E> HashSetInterface createHashSetInterface(int initialCapacity) {
+            throw new java.lang.UnsupportedOperationException();
+        }
+
+        public <E> HashSetInterface createHashSetInterface(Collection<? extends E> c) {
+            throw new java.lang.UnsupportedOperationException();
+        }
+
+        public <E> TreeSetInterface createTreeSetInterface( ) {
+            throw new java.lang.UnsupportedOperationException();
+        }
+
+        public <E> TreeSetInterface createTreeSetInterface(int initialCapacity) {
+            throw new java.lang.UnsupportedOperationException();
+        }
+
+        public <E> TreeSetInterface createTreeSetInterface(Collection<? extends E> c) {
+            throw new java.lang.UnsupportedOperationException();
+        }
+
+        public <E> LinkedHashSetInterface createLinkedHashSetInterface( ) {
+            throw new java.lang.UnsupportedOperationException();
+        }
+
+        public <E> LinkedHashSetInterface createLinkedHashSetInterface(int initialCapacity) {
+            throw new java.lang.UnsupportedOperationException();
+        }
+
+        public <E> LinkedHashSetInterface createLinkedHashSetInterface(Collection<? extends E> c) {
+            throw new java.lang.UnsupportedOperationException();
+        }
+
+        public <E> ConcurrentSkipListSetInterface createConcurrentSkipListSetInterface( ) {
+            throw new java.lang.UnsupportedOperationException();
+        }
+
+        public <E> ConcurrentSkipListSetInterface createConcurrentSkipListSetInterface(int initialCapacity) {
+            throw new java.lang.UnsupportedOperationException();
+        }
+
+        public <E> ConcurrentSkipListSetInterface createConcurrentSkipListSetInterface(Collection<? extends E> c) {
+            throw new java.lang.UnsupportedOperationException();
+        }
 
 }
