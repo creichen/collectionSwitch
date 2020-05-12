@@ -66,7 +66,7 @@ public class EmpiricalListAllocationContext implements ListAllocationContextInfo
                 return list;
         }
 
-    public <E> ArrayListInterface createMapArrayListInterface( ) {
+    public <E> ArrayListInterface createArrayListInterface( ) {
 
         ArrayListInterface<E> list = type.createArrayListInterface();
 
@@ -79,7 +79,7 @@ public class EmpiricalListAllocationContext implements ListAllocationContextInfo
     }
 
 
-    public <E> ArrayListInterface createMapArrayListInterface(int initialCapacity) {
+    public <E> ArrayListInterface createArrayListInterface(int initialCapacity) {
 
         ArrayListInterface<E> list = type.createArrayListInterface(initialCapacity);
 
@@ -92,7 +92,7 @@ public class EmpiricalListAllocationContext implements ListAllocationContextInfo
     }
 
 
-    public <E> ArrayListInterface createMapArrayListInterface(Collection<? extends E> c) {
+    public <E> ArrayListInterface createArrayListInterface(Collection<? extends E> c) {
 
         ArrayListInterface<E> list = type.createArrayListInterface(c);
 
@@ -105,7 +105,7 @@ public class EmpiricalListAllocationContext implements ListAllocationContextInfo
     }
 
 
-    public <E> LinkedListInterface createMapLinkedListInterface( ) {
+    public <E> LinkedListInterface createLinkedListInterface( ) {
 
         LinkedListInterface<E> list = type.createLinkedListInterface();
 
@@ -118,7 +118,7 @@ public class EmpiricalListAllocationContext implements ListAllocationContextInfo
     }
 
 
-    public <E> LinkedListInterface createMapLinkedListInterface(int initialCapacity) {
+    public <E> LinkedListInterface createLinkedListInterface(int initialCapacity) {
 
         LinkedListInterface<E> list = type.createLinkedListInterface(initialCapacity);
 
@@ -131,7 +131,7 @@ public class EmpiricalListAllocationContext implements ListAllocationContextInfo
     }
 
 
-    public <E> LinkedListInterface createMapLinkedListInterface(Collection<? extends E> c) {
+    public <E> LinkedListInterface createLinkedListInterface(Collection<? extends E> c) {
 
         LinkedListInterface<E> list = type.createLinkedListInterface(c);
 
@@ -144,7 +144,7 @@ public class EmpiricalListAllocationContext implements ListAllocationContextInfo
     }
 
 
-    public <E> VectorInterface createMapVectorInterface( ) {
+    public <E> VectorInterface createVectorInterface( ) {
 
         VectorInterface<E> list = type.createVectorInterface();
 
@@ -157,7 +157,7 @@ public class EmpiricalListAllocationContext implements ListAllocationContextInfo
     }
 
 
-    public <E> VectorInterface createMapVectorInterface(int initialCapacity) {
+    public <E> VectorInterface createVectorInterface(int initialCapacity) {
 
         VectorInterface<E> list = type.createVectorInterface(initialCapacity);
 
@@ -170,7 +170,7 @@ public class EmpiricalListAllocationContext implements ListAllocationContextInfo
     }
 
 
-    public <E> VectorInterface createMapVectorInterface(Collection<? extends E> c) {
+    public <E> VectorInterface createVectorInterface(Collection<? extends E> c) {
 
         VectorInterface<E> list = type.createVectorInterface(c);
 

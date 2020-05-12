@@ -8,6 +8,9 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
+import se.lth.util.*;
+import se.lth.util.concurrent.*;
+
 import de.heidelberg.pvs.diego.collectionswitch.context.ListAllocationContext;
 import de.heidelberg.pvs.diego.collectionswitch.context.ListAllocationContextInfo;
 import de.heidelberg.pvs.diego.collectionswitch.context.ListCollectionType;
@@ -69,7 +72,6 @@ public class LogListAllocationContext implements ListAllocationContext {
                 return context.createList(c);
         }
 
-
         @Override
         public void updateCollectionType(ListCollectionType type) {
                 ListCollectionType beforeState = context.getCurrentCollectionType();
@@ -84,9 +86,39 @@ public class LogListAllocationContext implements ListAllocationContext {
 
         }
 
+        public <E> ArrayListInterface createArrayListInterface( ) {
+            throw new java.lang.UnsupportedOperationException();
+        }
 
+        public <E> ArrayListInterface createArrayListInterface(int initialCapacity) {
+            throw new java.lang.UnsupportedOperationException();
+        }
 
+        public <E> ArrayListInterface createArrayListInterface(Collection<? extends E> c) {
+            throw new java.lang.UnsupportedOperationException();
+        }
 
+        public <E> LinkedListInterface createLinkedListInterface( ) {
+            throw new java.lang.UnsupportedOperationException();
+        }
 
+        public <E> LinkedListInterface createLinkedListInterface(int initialCapacity) {
+            throw new java.lang.UnsupportedOperationException();
+        }
 
+        public <E> LinkedListInterface createLinkedListInterface(Collection<? extends E> c) {
+            throw new java.lang.UnsupportedOperationException();
+        }
+
+        public <E> VectorInterface createVectorInterface( ) {
+            throw new java.lang.UnsupportedOperationException();
+        }
+
+        public <E> VectorInterface createVectorInterface(int initialCapacity) {
+            throw new java.lang.UnsupportedOperationException();
+        }
+
+        public <E> VectorInterface createVectorInterface(Collection<? extends E> c) {
+            throw new java.lang.UnsupportedOperationException();
+        }
 }
