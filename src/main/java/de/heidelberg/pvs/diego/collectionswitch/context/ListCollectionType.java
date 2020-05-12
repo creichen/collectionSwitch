@@ -82,39 +82,39 @@ public enum ListCollectionType {
                         return new ArrayListUniversal<E>(c);
                 }
         }
-        public <E> ArrayListInterface<E> createListArrayListInterface( ) {
+        public <E> ArrayListInterface<E> createArrayListInterface( ) {
             return (ArrayListInterface) createList();
         }
 
-        public <E> ArrayListInterface<E> createListArrayListInterface(int initialCapacity) {
+        public <E> ArrayListInterface<E> createArrayListInterface(int initialCapacity) {
             return (ArrayListInterface) createList(initialCapacity);
         }
 
-        public <E> ArrayListInterface<E> createListArrayListInterface(Collection<? extends E> c) {
+        public <E> ArrayListInterface<E> createArrayListInterface(Collection<? extends E> c) {
             return (ArrayListInterface) createList(c);
         }
 
-        public <E> LinkedListInterface<E> createListLinkedListInterface( ) {
+        public <E> LinkedListInterface<E> createLinkedListInterface( ) {
             return (LinkedListInterface) createList();
         }
 
-        public <E> LinkedListInterface<E> createListLinkedListInterface(int initialCapacity) {
+        public <E> LinkedListInterface<E> createLinkedListInterface(int initialCapacity) {
             return (LinkedListInterface) createList(initialCapacity);
         }
 
-        public <E> LinkedListInterface<E> createListLinkedListInterface(Collection<? extends E> c) {
+        public <E> LinkedListInterface<E> createLinkedListInterface(Collection<? extends E> c) {
             return (LinkedListInterface) createList(c);
         }
 
-        public <E> VectorInterface<E> createListVectorInterface( ) {
+        public <E> VectorInterface<E> createVectorInterface( ) {
             return (VectorInterface) createList();
         }
 
-        public <E> VectorInterface<E> createListVectorInterface(int initialCapacity) {
+        public <E> VectorInterface<E> createVectorInterface(int initialCapacity) {
             return (VectorInterface) createList(initialCapacity);
         }
 
-        public <E> VectorInterface<E> createListVectorInterface(Collection<? extends E> c) {
+        public <E> VectorInterface<E> createVectorInterface(Collection<? extends E> c) {
             return (VectorInterface) createList(c);
         }
 }

@@ -144,51 +144,51 @@ public enum MapCollectionType {
                 }
         }
 
-        public <K, V> HashMapInterface createMapHashMapInterface( ) {
+        public <K, V> HashMapInterface createHashMapInterface( ) {
             return (HashMapInterface) createMap();
         }
 
-        public <K, V> HashMapInterface createMapHashMapInterface(int initialCapacity) {
+        public <K, V> HashMapInterface createHashMapInterface(int initialCapacity) {
             return (HashMapInterface) createMap(initialCapacity);
         }
 
-        public <K, V> HashMapInterface createMapHashMapInterface(Map<K, V> c) {
+        public <K, V> HashMapInterface createHashMapInterface(Map<K, V> c) {
             return (HashMapInterface) createMap(c);
         }
 
-        public <K, V> TreeMapInterface createMapTreeMapInterface( ) {
+        public <K, V> TreeMapInterface createTreeMapInterface( ) {
             return (TreeMapInterface) createMap();
         }
 
-        public <K, V> TreeMapInterface createMapTreeMapInterface(int initialCapacity) {
+        public <K, V> TreeMapInterface createTreeMapInterface(int initialCapacity) {
             return (TreeMapInterface) createMap(initialCapacity);
         }
 
-        public <K, V> TreeMapInterface createMapTreeMapInterface(Map<K, V> c) {
+        public <K, V> TreeMapInterface createTreeMapInterface(Map<K, V> c) {
             return (TreeMapInterface) createMap(c);
         }
 
-        public <K, V> LinkedHashMapInterface createMapLinkedHashMapInterface( ) {
+        public <K, V> LinkedHashMapInterface createLinkedHashMapInterface( ) {
             return (LinkedHashMapInterface) createMap();
         }
 
-        public <K, V> LinkedHashMapInterface createMapLinkedHashMapInterface(int initialCapacity) {
+        public <K, V> LinkedHashMapInterface createLinkedHashMapInterface(int initialCapacity) {
             return (LinkedHashMapInterface) createMap(initialCapacity);
         }
 
-        public <K, V> LinkedHashMapInterface createMapLinkedHashMapInterface(Map<K, V> c) {
+        public <K, V> LinkedHashMapInterface createLinkedHashMapInterface(Map<K, V> c) {
             return (LinkedHashMapInterface) createMap(c);
         }
 
-        public <K, V> ConcurrentSkipListMapInterface createMapConcurrentSkipListMapInterface( ) {
+        public <K, V> ConcurrentSkipListMapInterface createConcurrentSkipListMapInterface( ) {
             return (ConcurrentSkipListMapInterface) createMap();
         }
 
-        public <K, V> ConcurrentSkipListMapInterface createMapConcurrentSkipListMapInterface(int initialCapacity) {
+        public <K, V> ConcurrentSkipListMapInterface createConcurrentSkipListMapInterface(int initialCapacity) {
             return (ConcurrentSkipListMapInterface) createMap(initialCapacity);
         }
 
-        public <K, V> ConcurrentSkipListMapInterface createMapConcurrentSkipListMapInterface(Map<K, V> c) {
+        public <K, V> ConcurrentSkipListMapInterface createConcurrentSkipListMapInterface(Map<K, V> c) {
             return (ConcurrentSkipListMapInterface) createMap(c);
         }
 }

@@ -130,51 +130,51 @@ public enum SetCollectionType {
 
         }
 
-        public <E> HashSetInterface<E> createSetHashSetInterface( ) {
+        public <E> HashSetInterface<E> createHashSetInterface( ) {
             return (HashSetInterface) createSet();
         }
 
-        public <E> HashSetInterface<E> createSetHashSetInterface(int initialCapacity) {
+        public <E> HashSetInterface<E> createHashSetInterface(int initialCapacity) {
             return (HashSetInterface) createSet(initialCapacity);
         }
 
-        public <E> HashSetInterface<E> createSetHashSetInterface(Collection<? extends E> c) {
+        public <E> HashSetInterface<E> createHashSetInterface(Collection<? extends E> c) {
             return (HashSetInterface) createSet(c);
         }
 
-        public <E> TreeSetInterface<E> createSetTreeSetInterface( ) {
+        public <E> TreeSetInterface<E> createTreeSetInterface( ) {
             return (TreeSetInterface) createSet();
         }
 
-        public <E> TreeSetInterface<E> createSetTreeSetInterface(int initialCapacity) {
+        public <E> TreeSetInterface<E> createTreeSetInterface(int initialCapacity) {
             return (TreeSetInterface) createSet(initialCapacity);
         }
 
-        public <E> TreeSetInterface<E> createSetTreeSetInterface(Collection<? extends E> c) {
+        public <E> TreeSetInterface<E> createTreeSetInterface(Collection<? extends E> c) {
             return (TreeSetInterface) createSet(c);
         }
 
-        public <E> LinkedHashSetInterface<E> createSetLinkedHashSetInterface( ) {
+        public <E> LinkedHashSetInterface<E> createLinkedHashSetInterface( ) {
             return (LinkedHashSetInterface) createSet();
         }
 
-        public <E> LinkedHashSetInterface<E> createSetLinkedHashSetInterface(int initialCapacity) {
+        public <E> LinkedHashSetInterface<E> createLinkedHashSetInterface(int initialCapacity) {
             return (LinkedHashSetInterface) createSet(initialCapacity);
         }
 
-        public <E> LinkedHashSetInterface<E> createSetLinkedHashSetInterface(Collection<? extends E> c) {
+        public <E> LinkedHashSetInterface<E> createLinkedHashSetInterface(Collection<? extends E> c) {
             return (LinkedHashSetInterface) createSet(c);
         }
 
-        public <E> ConcurrentSkipListSetInterface<E> createSetConcurrentSkipListSetInterface( ) {
+        public <E> ConcurrentSkipListSetInterface<E> createConcurrentSkipListSetInterface( ) {
             return (ConcurrentSkipListSetInterface) createSet();
         }
 
-        public <E> ConcurrentSkipListSetInterface<E> createSetConcurrentSkipListSetInterface(int initialCapacity) {
+        public <E> ConcurrentSkipListSetInterface<E> createConcurrentSkipListSetInterface(int initialCapacity) {
             return (ConcurrentSkipListSetInterface) createSet(initialCapacity);
         }
 
-        public <E> ConcurrentSkipListSetInterface<E> createSetConcurrentSkipListSetInterface(Collection<? extends E> c) {
+        public <E> ConcurrentSkipListSetInterface<E> createConcurrentSkipListSetInterface(Collection<? extends E> c) {
             return (ConcurrentSkipListSetInterface) createSet(c);
         }
 }
