@@ -1,15 +1,16 @@
 package de.heidelberg.pvs.diego.collectionswitch.context;
 
-import se.lth.util.HashMapUniversal;
-import se.lth.util.LinkedHashMapUniversal;
+import se.lth.util.*;
+import se.lth.util.concurrent.*;
+
 import java.util.Map;
 
 import de.heidelberg.pvs.diego.collectionswitch.adaptive.AdaptiveMapUniversal;
 import de.heidelberg.pvs.diego.collectionswitch.THashMapUniversal;
 import de.heidelberg.pvs.diego.collectionswitch.UnifiedMapUniversal;
-import de.heidelberg.pvs.diego.collectionswitch.ArrayMapUniversal;
+import de.heidelberg.pvs.diego.collectionswitch.nlp.ArrayMapUniversal;
 
-import edu.stanford.nlp.util.ArrayMap;
+
 
 import net.openhft.koloboke.collect.map.hash.HashObjObjMaps;
 import vlsi.utils.CompactHashMap;
@@ -51,10 +52,10 @@ public enum MapCollectionType {
                         return new UnifiedMapUniversal<K, V>(initialCapacity);
 
                 case GOOGLE_ARRAYMAP:
-                        return new ArrayMapUniversal<K, V>();
+                        return new de.heidelberg.pvs.diego.collectionswitch.ArrayMapUniversal<K, V>();
 
                 case NLP_ARRAYMAP:
-                        return new ArrayMap<K, V>(initialCapacity);
+                        return new ArrayMapUniversal<K, V>(initialCapacity);
 
                 case NAYUKI_COMPACTHASHMAP:
                         return new CompactHashMap<K, V>();
@@ -89,10 +90,10 @@ public enum MapCollectionType {
                         return new UnifiedMapUniversal<K, V>();
 
                 case GOOGLE_ARRAYMAP:
-                        return new ArrayMapUniversal<K, V>();
+                        return new de.heidelberg.pvs.diego.collectionswitch.ArrayMapUniversal<K, V>();
 
                 case NLP_ARRAYMAP:
-                        return new ArrayMap<K, V>();
+                        return new ArrayMapUniversal<K, V>();
 
                 case NAYUKI_COMPACTHASHMAP:
                         return new CompactHashMap<K, V>();
@@ -126,12 +127,12 @@ public enum MapCollectionType {
                         return new UnifiedMapUniversal<K, V>(mapToCopy);
 
                 case GOOGLE_ARRAYMAP:
-                        Map<K, V> map = new ArrayMapUniversal<K, V>();
+                        Map<K, V> map = new de.heidelberg.pvs.diego.collectionswitch.ArrayMapUniversal<K, V>();
                         map.putAll(mapToCopy);
                         return map;
 
                 case NLP_ARRAYMAP:
-                        return new ArrayMap<K, V>(mapToCopy);
+                        return new ArrayMapUniversal<K, V>(mapToCopy);
 
                 case NAYUKI_COMPACTHASHMAP:
                         Map<K, V> map2 = new CompactHashMap<K, V>();
@@ -141,5 +142,53 @@ public enum MapCollectionType {
                 default:
                         return new HashMapUniversal<K, V>(mapToCopy);
                 }
+        }
+
+        public <K, V> HashMapInterface createMapHashMapInterface( ) {
+            return (HashMapInterface) createMap();
+        }
+
+        public <K, V> HashMapInterface createMapHashMapInterface(int initialCapacity) {
+            return (HashMapInterface) createMap(initialCapacity);
+        }
+
+        public <K, V> HashMapInterface createMapHashMapInterface(Map<K, V> c) {
+            return (HashMapInterface) createMap(c);
+        }
+
+        public <K, V> TreeMapInterface createMapTreeMapInterface( ) {
+            return (TreeMapInterface) createMap();
+        }
+
+        public <K, V> TreeMapInterface createMapTreeMapInterface(int initialCapacity) {
+            return (TreeMapInterface) createMap(initialCapacity);
+        }
+
+        public <K, V> TreeMapInterface createMapTreeMapInterface(Map<K, V> c) {
+            return (TreeMapInterface) createMap(c);
+        }
+
+        public <K, V> LinkedHashMapInterface createMapLinkedHashMapInterface( ) {
+            return (LinkedHashMapInterface) createMap();
+        }
+
+        public <K, V> LinkedHashMapInterface createMapLinkedHashMapInterface(int initialCapacity) {
+            return (LinkedHashMapInterface) createMap(initialCapacity);
+        }
+
+        public <K, V> LinkedHashMapInterface createMapLinkedHashMapInterface(Map<K, V> c) {
+            return (LinkedHashMapInterface) createMap(c);
+        }
+
+        public <K, V> ConcurrentSkipListMapInterface createMapConcurrentSkipListMapInterface( ) {
+            return (ConcurrentSkipListMapInterface) createMap();
+        }
+
+        public <K, V> ConcurrentSkipListMapInterface createMapConcurrentSkipListMapInterface(int initialCapacity) {
+            return (ConcurrentSkipListMapInterface) createMap(initialCapacity);
+        }
+
+        public <K, V> ConcurrentSkipListMapInterface createMapConcurrentSkipListMapInterface(Map<K, V> c) {
+            return (ConcurrentSkipListMapInterface) createMap(c);
         }
 }

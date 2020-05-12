@@ -5,8 +5,7 @@ import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
-import se.lth.util.ArrayListUniversal;
-import se.lth.util.LinkedListUniversal;
+import se.lth.util.*;
 
 import de.heidelberg.pvs.diego.collectionswitch.adaptive.AdaptiveList;
 import de.heidelberg.pvs.diego.collectionswitch.custom.lists.HashArrayListUniversal;
@@ -82,5 +81,40 @@ public enum ListCollectionType {
                 default:
                         return new ArrayListUniversal<E>(c);
                 }
+        }
+        public <E> ArrayListInterface<E> createListArrayListInterface( ) {
+            return (ArrayListInterface) createList();
+        }
+
+        public <E> ArrayListInterface<E> createListArrayListInterface(int initialCapacity) {
+            return (ArrayListInterface) createList(initialCapacity);
+        }
+
+        public <E> ArrayListInterface<E> createListArrayListInterface(Collection<? extends E> c) {
+            return (ArrayListInterface) createList(c);
+        }
+
+        public <E> LinkedListInterface<E> createListLinkedListInterface( ) {
+            return (LinkedListInterface) createList();
+        }
+
+        public <E> LinkedListInterface<E> createListLinkedListInterface(int initialCapacity) {
+            return (LinkedListInterface) createList(initialCapacity);
+        }
+
+        public <E> LinkedListInterface<E> createListLinkedListInterface(Collection<? extends E> c) {
+            return (LinkedListInterface) createList(c);
+        }
+
+        public <E> VectorInterface<E> createListVectorInterface( ) {
+            return (VectorInterface) createList();
+        }
+
+        public <E> VectorInterface<E> createListVectorInterface(int initialCapacity) {
+            return (VectorInterface) createList(initialCapacity);
+        }
+
+        public <E> VectorInterface<E> createListVectorInterface(Collection<? extends E> c) {
+            return (VectorInterface) createList(c);
         }
 }
