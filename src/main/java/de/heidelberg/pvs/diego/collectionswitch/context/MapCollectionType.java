@@ -37,8 +37,7 @@ public enum MapCollectionType {
                         return new HashMapUniversal<K, V>(initialCapacity);
 
                 case KOLOBOKE_HASHMAP:
-                    throw new UnsupportedOperationException();
-                    // return HashObjObjMaps.newMutableMap(initialCapacity);
+                        return HashObjObjMaps.newMutableMap(initialCapacity);
 
                 case ONLINEADAPTER_ADAPTIVEMAP:
                         return new AdaptiveMapUniversal<K, V>(initialCapacity);
@@ -76,8 +75,7 @@ public enum MapCollectionType {
                         return new HashMapUniversal<K, V>();
 
                 case KOLOBOKE_HASHMAP:
-                    throw new UnsupportedOperationException();
-                    // return HashObjObjMaps.newMutableMap();
+                        return HashObjObjMaps.newMutableMap();
 
                 case ONLINEADAPTER_ADAPTIVEMAP:
                         return new AdaptiveMapUniversal<K, V>();
@@ -114,8 +112,7 @@ public enum MapCollectionType {
                         return new HashMapUniversal<K, V>(mapToCopy);
 
                 case KOLOBOKE_HASHMAP:
-                    // return HashObjObjMaps.newMutableMap(mapToCopy);
-                    throw new UnsupportedOperationException();
+                        return HashObjObjMaps.newMutableMap(mapToCopy);
 
                 case ONLINEADAPTER_ADAPTIVEMAP:
                         return new AdaptiveMapUniversal<K, V>(mapToCopy);
