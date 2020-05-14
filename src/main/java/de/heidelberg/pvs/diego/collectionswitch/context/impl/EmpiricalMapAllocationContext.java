@@ -89,7 +89,7 @@ public class EmpiricalMapAllocationContext implements MapAllocationContextInfo {
         HashMapInterface<K, V> map = type.createHashMapInterface();
 
         if (instancesCount++ < windowSize) {
-            return (HashMapInterface) optimizer.createMonitor(map);
+            return (HashMapInterface) optimizer.createHashMapInterfaceMonitor(map);
         }
 
         return map;
@@ -102,7 +102,7 @@ public class EmpiricalMapAllocationContext implements MapAllocationContextInfo {
         HashMapInterface<K, V> map = type.createHashMapInterface(initialCapacity);
 
         if (instancesCount++ < windowSize) {
-            return (HashMapInterface) optimizer.createMonitor(map);
+            return (HashMapInterface) optimizer.createHashMapInterfaceMonitor(map);
         }
 
         return map;
@@ -115,7 +115,7 @@ public class EmpiricalMapAllocationContext implements MapAllocationContextInfo {
         HashMapInterface<K, V> map = type.createHashMapInterface(mapToCopy);
 
         if (instancesCount++ < windowSize) {
-            return (HashMapInterface) optimizer.createMonitor(map);
+            return (HashMapInterface) optimizer.createHashMapInterfaceMonitor(map);
         }
 
         return map;
@@ -128,7 +128,7 @@ public class EmpiricalMapAllocationContext implements MapAllocationContextInfo {
         TreeMapInterface<K, V> map = type.createTreeMapInterface();
 
         if (instancesCount++ < windowSize) {
-            return (TreeMapInterface) optimizer.createMonitor(map);
+            return (TreeMapInterface) optimizer.createTreeMapInterfaceMonitor(map);
         }
 
         return map;
@@ -141,7 +141,7 @@ public class EmpiricalMapAllocationContext implements MapAllocationContextInfo {
         TreeMapInterface<K, V> map = type.createTreeMapInterface(initialCapacity);
 
         if (instancesCount++ < windowSize) {
-            return (TreeMapInterface) optimizer.createMonitor(map);
+            return (TreeMapInterface) optimizer.createTreeMapInterfaceMonitor(map);
         }
 
         return map;
@@ -154,7 +154,7 @@ public class EmpiricalMapAllocationContext implements MapAllocationContextInfo {
         TreeMapInterface<K, V> map = type.createTreeMapInterface(mapToCopy);
 
         if (instancesCount++ < windowSize) {
-            return (TreeMapInterface) optimizer.createMonitor(map);
+            return (TreeMapInterface) optimizer.createTreeMapInterfaceMonitor(map);
         }
 
         return map;
@@ -167,7 +167,7 @@ public class EmpiricalMapAllocationContext implements MapAllocationContextInfo {
         LinkedHashMapInterface<K, V> map = type.createLinkedHashMapInterface();
 
         if (instancesCount++ < windowSize) {
-            return (LinkedHashMapInterface) optimizer.createMonitor(map);
+            return (LinkedHashMapInterface) optimizer.createLinkedHashMapInterfaceMonitor(map);
         }
 
         return map;
@@ -180,7 +180,7 @@ public class EmpiricalMapAllocationContext implements MapAllocationContextInfo {
         LinkedHashMapInterface<K, V> map = type.createLinkedHashMapInterface(initialCapacity);
 
         if (instancesCount++ < windowSize) {
-            return (LinkedHashMapInterface) optimizer.createMonitor(map);
+            return (LinkedHashMapInterface) optimizer.createLinkedHashMapInterfaceMonitor(map);
         }
 
         return map;
@@ -193,7 +193,7 @@ public class EmpiricalMapAllocationContext implements MapAllocationContextInfo {
         LinkedHashMapInterface<K, V> map = type.createLinkedHashMapInterface(mapToCopy);
 
         if (instancesCount++ < windowSize) {
-            return (LinkedHashMapInterface) optimizer.createMonitor(map);
+            return (LinkedHashMapInterface) optimizer.createLinkedHashMapInterfaceMonitor(map);
         }
 
         return map;
@@ -206,7 +206,7 @@ public class EmpiricalMapAllocationContext implements MapAllocationContextInfo {
         ConcurrentSkipListMapInterface<K, V> map = type.createConcurrentSkipListMapInterface();
 
         if (instancesCount++ < windowSize) {
-            return (ConcurrentSkipListMapInterface) optimizer.createMonitor(map);
+            return (ConcurrentSkipListMapInterface) optimizer.createConcurrentSkipListMapInterfaceMonitor(map);
         }
 
         return map;
@@ -219,7 +219,7 @@ public class EmpiricalMapAllocationContext implements MapAllocationContextInfo {
         ConcurrentSkipListMapInterface<K, V> map = type.createConcurrentSkipListMapInterface(initialCapacity);
 
         if (instancesCount++ < windowSize) {
-            return (ConcurrentSkipListMapInterface) optimizer.createMonitor(map);
+            return (ConcurrentSkipListMapInterface) optimizer.createConcurrentSkipListMapInterfaceMonitor(map);
         }
 
         return map;
@@ -232,7 +232,7 @@ public class EmpiricalMapAllocationContext implements MapAllocationContextInfo {
         ConcurrentSkipListMapInterface<K, V> map = type.createConcurrentSkipListMapInterface(mapToCopy);
 
         if (instancesCount++ < windowSize) {
-            return (ConcurrentSkipListMapInterface) optimizer.createMonitor(map);
+            return (ConcurrentSkipListMapInterface) optimizer.createConcurrentSkipListMapInterfaceMonitor(map);
         }
 
         return map;

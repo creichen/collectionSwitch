@@ -68,7 +68,7 @@ public class EmpiricalSetAllocationContext  implements SetAllocationContextInfo 
         HashSetInterface<E> set = type.createHashSetInterface();
 
         if (instancesCount++ < windowSize) {
-            return (HashSetInterface) optimizer.createMonitor(set);
+            return (HashSetInterface) optimizer.createHashSetInterfaceMonitor(set);
         }
 
         return set;
@@ -81,7 +81,7 @@ public class EmpiricalSetAllocationContext  implements SetAllocationContextInfo 
         HashSetInterface<E> set = type.createHashSetInterface(initialCapacity);
 
         if (instancesCount++ < windowSize) {
-            return (HashSetInterface) optimizer.createMonitor(set);
+            return (HashSetInterface) optimizer.createHashSetInterfaceMonitor(set);
         }
 
         return set;
@@ -94,7 +94,7 @@ public class EmpiricalSetAllocationContext  implements SetAllocationContextInfo 
         HashSetInterface<E> set = type.createHashSetInterface(c);
 
         if (instancesCount++ < windowSize) {
-            return (HashSetInterface) optimizer.createMonitor(set);
+            return (HashSetInterface) optimizer.createHashSetInterfaceMonitor(set);
         }
 
         return set;
@@ -107,7 +107,7 @@ public class EmpiricalSetAllocationContext  implements SetAllocationContextInfo 
         TreeSetInterface<E> set = type.createTreeSetInterface();
 
         if (instancesCount++ < windowSize) {
-            return (TreeSetInterface) optimizer.createMonitor(set);
+            return (TreeSetInterface) optimizer.createTreeSetInterfaceMonitor(set);
         }
 
         return set;
@@ -120,7 +120,7 @@ public class EmpiricalSetAllocationContext  implements SetAllocationContextInfo 
         TreeSetInterface<E> set = type.createTreeSetInterface(initialCapacity);
 
         if (instancesCount++ < windowSize) {
-            return (TreeSetInterface) optimizer.createMonitor(set);
+            return (TreeSetInterface) optimizer.createTreeSetInterfaceMonitor(set);
         }
 
         return set;
@@ -133,7 +133,7 @@ public class EmpiricalSetAllocationContext  implements SetAllocationContextInfo 
         TreeSetInterface<E> set = type.createTreeSetInterface(c);
 
         if (instancesCount++ < windowSize) {
-            return (TreeSetInterface) optimizer.createMonitor(set);
+            return (TreeSetInterface) optimizer.createTreeSetInterfaceMonitor(set);
         }
 
         return set;
@@ -146,7 +146,7 @@ public class EmpiricalSetAllocationContext  implements SetAllocationContextInfo 
         LinkedHashSetInterface<E> set = type.createLinkedHashSetInterface();
 
         if (instancesCount++ < windowSize) {
-            return (LinkedHashSetInterface) optimizer.createMonitor(set);
+            return (LinkedHashSetInterface) optimizer.createLinkedHashSetInterfaceMonitor(set);
         }
 
         return set;
@@ -159,7 +159,7 @@ public class EmpiricalSetAllocationContext  implements SetAllocationContextInfo 
         LinkedHashSetInterface<E> set = type.createLinkedHashSetInterface(initialCapacity);
 
         if (instancesCount++ < windowSize) {
-            return (LinkedHashSetInterface) optimizer.createMonitor(set);
+            return (LinkedHashSetInterface) optimizer.createLinkedHashSetInterfaceMonitor(set);
         }
 
         return set;
@@ -172,7 +172,7 @@ public class EmpiricalSetAllocationContext  implements SetAllocationContextInfo 
         LinkedHashSetInterface<E> set = type.createLinkedHashSetInterface(c);
 
         if (instancesCount++ < windowSize) {
-            return (LinkedHashSetInterface) optimizer.createMonitor(set);
+            return (LinkedHashSetInterface) optimizer.createLinkedHashSetInterfaceMonitor(set);
         }
 
         return set;
@@ -185,7 +185,7 @@ public class EmpiricalSetAllocationContext  implements SetAllocationContextInfo 
         ConcurrentSkipListSetInterface<E> set = type.createConcurrentSkipListSetInterface();
 
         if (instancesCount++ < windowSize) {
-            return (ConcurrentSkipListSetInterface) optimizer.createMonitor(set);
+            return (ConcurrentSkipListSetInterface) optimizer.createConcurrentSkipListSetInterfaceMonitor(set);
         }
 
         return set;
@@ -198,7 +198,7 @@ public class EmpiricalSetAllocationContext  implements SetAllocationContextInfo 
         ConcurrentSkipListSetInterface<E> set = type.createConcurrentSkipListSetInterface(initialCapacity);
 
         if (instancesCount++ < windowSize) {
-            return (ConcurrentSkipListSetInterface) optimizer.createMonitor(set);
+            return (ConcurrentSkipListSetInterface) optimizer.createConcurrentSkipListSetInterfaceMonitor(set);
         }
 
         return set;
@@ -211,7 +211,7 @@ public class EmpiricalSetAllocationContext  implements SetAllocationContextInfo 
         ConcurrentSkipListSetInterface<E> set = type.createConcurrentSkipListSetInterface(c);
 
         if (instancesCount++ < windowSize) {
-            return (ConcurrentSkipListSetInterface) optimizer.createMonitor(set);
+            return (ConcurrentSkipListSetInterface) optimizer.createConcurrentSkipListSetInterfaceMonitor(set);
         }
 
         return set;

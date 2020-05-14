@@ -56,28 +56,32 @@ public class SetEmpiricalOptimizer implements SetAllocationOptimizer {
                 return new SetActiveFullMonitor<E>(set, state);
         }
 
-        public <E> Set<E> createMonitor(HashSetInterface<E> set) {
+        @Override
+        public <E> Set<E> createHashSetInterfaceMonitor(HashSetInterface<E> set) {
                 SetMetrics state = new SetMetrics(new WeakReference<Set<E>>(set));
                 collectionsState.add(state);
                 return new HashSetActiveFullMonitor<E>(set, state);
         }
 
 
-        public <E> Set<E> createMonitor(TreeSetInterface<E> set) {
+        @Override
+        public <E> Set<E> createTreeSetInterfaceMonitor(TreeSetInterface<E> set) {
                 SetMetrics state = new SetMetrics(new WeakReference<Set<E>>(set));
                 collectionsState.add(state);
                 return new TreeSetActiveFullMonitor<E>(set, state);
         }
 
 
-        public <E> Set<E> createMonitor(LinkedHashSetInterface<E> set) {
+        @Override
+        public <E> Set<E> createLinkedHashSetInterfaceMonitor(LinkedHashSetInterface<E> set) {
                 SetMetrics state = new SetMetrics(new WeakReference<Set<E>>(set));
                 collectionsState.add(state);
                 return new LinkedHashSetActiveFullMonitor<E>(set, state);
         }
 
 
-        public <E> Set<E> createMonitor(ConcurrentSkipListSetInterface<E> set) {
+        @Override
+        public <E> Set<E> createConcurrentSkipListSetInterfaceMonitor(ConcurrentSkipListSetInterface<E> set) {
                 SetMetrics state = new SetMetrics(new WeakReference<Set<E>>(set));
                 collectionsState.add(state);
                 return new ConcurrentSkipListSetActiveFullMonitor<E>(set, state);

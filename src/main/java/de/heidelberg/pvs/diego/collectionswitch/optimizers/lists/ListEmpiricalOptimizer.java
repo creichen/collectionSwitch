@@ -56,19 +56,22 @@ public class ListEmpiricalOptimizer implements ListAllocationOptimizer {
                 return new ListActiveFullMonitor<E>(list, state);
         }
 
-        public <E> List<E> createMonitor(ArrayListInterface<E> list) {
+        @Override
+        public <E> List<E> createArrayListInterfaceMonitor(ArrayListInterface<E> list) {
                 ListMetrics state = new ListMetrics(new WeakReference<List<E>>(list));
                 collectionsState.add(state);
                 return new ArrayListActiveFullMonitor<E>(list, state);
         }
 
-        public <E> List<E> createMonitor(LinkedListInterface<E> list) {
+        @Override
+        public <E> List<E> createLinkedListInterfaceMonitor(LinkedListInterface<E> list) {
                 ListMetrics state = new ListMetrics(new WeakReference<List<E>>(list));
                 collectionsState.add(state);
                 return new LinkedListActiveFullMonitor<E>(list, state);
         }
 
-        public <E> List<E> createMonitor(VectorInterface<E> list) {
+        @Override
+        public <E> List<E> createVectorInterfaceMonitor(VectorInterface<E> list) {
                 ListMetrics state = new ListMetrics(new WeakReference<List<E>>(list));
                 collectionsState.add(state);
                 return new VectorActiveFullMonitor<E>(list, state);

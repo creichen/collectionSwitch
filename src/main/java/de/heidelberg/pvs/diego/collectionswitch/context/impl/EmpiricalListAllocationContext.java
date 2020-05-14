@@ -71,7 +71,7 @@ public class EmpiricalListAllocationContext implements ListAllocationContextInfo
         ArrayListInterface<E> list = type.createArrayListInterface();
 
         if (instancesCount++ < windowSize) {
-            return (ArrayListInterface) optimizer.createMonitor(list);
+            return (ArrayListInterface) optimizer.createArrayListInterfaceMonitor(list);
         }
 
         return list;
@@ -84,7 +84,7 @@ public class EmpiricalListAllocationContext implements ListAllocationContextInfo
         ArrayListInterface<E> list = type.createArrayListInterface(initialCapacity);
 
         if (instancesCount++ < windowSize) {
-            return (ArrayListInterface) optimizer.createMonitor(list);
+            return (ArrayListInterface) optimizer.createArrayListInterfaceMonitor(list);
         }
 
         return list;
@@ -97,7 +97,7 @@ public class EmpiricalListAllocationContext implements ListAllocationContextInfo
         ArrayListInterface<E> list = type.createArrayListInterface(c);
 
         if (instancesCount++ < windowSize) {
-            return (ArrayListInterface) optimizer.createMonitor(list);
+            return (ArrayListInterface) optimizer.createArrayListInterfaceMonitor(list);
         }
 
         return list;
@@ -110,7 +110,7 @@ public class EmpiricalListAllocationContext implements ListAllocationContextInfo
         LinkedListInterface<E> list = type.createLinkedListInterface();
 
         if (instancesCount++ < windowSize) {
-            return (LinkedListInterface) optimizer.createMonitor(list);
+            return (LinkedListInterface) optimizer.createLinkedListInterfaceMonitor(list);
         }
 
         return list;
@@ -123,7 +123,7 @@ public class EmpiricalListAllocationContext implements ListAllocationContextInfo
         LinkedListInterface<E> list = type.createLinkedListInterface(initialCapacity);
 
         if (instancesCount++ < windowSize) {
-            return (LinkedListInterface) optimizer.createMonitor(list);
+            return (LinkedListInterface) optimizer.createLinkedListInterfaceMonitor(list);
         }
 
         return list;
@@ -136,7 +136,7 @@ public class EmpiricalListAllocationContext implements ListAllocationContextInfo
         LinkedListInterface<E> list = type.createLinkedListInterface(c);
 
         if (instancesCount++ < windowSize) {
-            return (LinkedListInterface) optimizer.createMonitor(list);
+            return (LinkedListInterface) optimizer.createLinkedListInterfaceMonitor(list);
         }
 
         return list;
@@ -149,7 +149,7 @@ public class EmpiricalListAllocationContext implements ListAllocationContextInfo
         VectorInterface<E> list = type.createVectorInterface();
 
         if (instancesCount++ < windowSize) {
-            return (VectorInterface) optimizer.createMonitor(list);
+            return (VectorInterface) optimizer.createVectorInterfaceMonitor(list);
         }
 
         return list;
@@ -162,7 +162,7 @@ public class EmpiricalListAllocationContext implements ListAllocationContextInfo
         VectorInterface<E> list = type.createVectorInterface(initialCapacity);
 
         if (instancesCount++ < windowSize) {
-            return (VectorInterface) optimizer.createMonitor(list);
+            return (VectorInterface) optimizer.createVectorInterfaceMonitor(list);
         }
 
         return list;
@@ -175,7 +175,7 @@ public class EmpiricalListAllocationContext implements ListAllocationContextInfo
         VectorInterface<E> list = type.createVectorInterface(c);
 
         if (instancesCount++ < windowSize) {
-            return (VectorInterface) optimizer.createMonitor(list);
+            return (VectorInterface) optimizer.createVectorInterfaceMonitor(list);
         }
 
         return list;

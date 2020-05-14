@@ -138,28 +138,32 @@ public class MapEmpiricalOptimizer implements MapAllocationOptimizer {
                 return new MapActiveFullMonitor<K, V>(map, metrics);
         }
 
-        public <K, V> Map<K, V> createMonitor(HashMapInterface<K, V> map) {
+        @Override
+        public <K, V> Map<K, V> createHashMapInterfaceMonitor(HashMapInterface<K, V> map) {
                 MapMetrics state = new MapMetrics(new WeakReference<Map<K, V>>(map));
                 collectionsState.add(state);
                 return new HashMapActiveFullMonitor<K, V>(map, state);
         }
 
 
-        public <K, V> Map<K, V> createMonitor(TreeMapInterface<K, V> map) {
+        @Override
+        public <K, V> Map<K, V> createTreeMapInterfaceMonitor(TreeMapInterface<K, V> map) {
                 MapMetrics state = new MapMetrics(new WeakReference<Map<K, V>>(map));
                 collectionsState.add(state);
                 return new TreeMapActiveFullMonitor<K, V>(map, state);
         }
 
 
-        public <K, V> Map<K, V> createMonitor(LinkedHashMapInterface<K, V> map) {
+        @Override
+        public <K, V> Map<K, V> createLinkedHashMapInterfaceMonitor(LinkedHashMapInterface<K, V> map) {
                 MapMetrics state = new MapMetrics(new WeakReference<Map<K, V>>(map));
                 collectionsState.add(state);
                 return new LinkedHashMapActiveFullMonitor<K, V>(map, state);
         }
 
 
-        public <K, V> Map<K, V> createMonitor(ConcurrentSkipListMapInterface<K, V> map) {
+        @Override
+        public <K, V> Map<K, V> createConcurrentSkipListMapInterfaceMonitor(ConcurrentSkipListMapInterface<K, V> map) {
                 MapMetrics state = new MapMetrics(new WeakReference<Map<K, V>>(map));
                 collectionsState.add(state);
                 return new ConcurrentSkipListMapActiveFullMonitor<K, V>(map, state);
