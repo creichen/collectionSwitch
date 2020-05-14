@@ -53,7 +53,7 @@ public class ArrayMapUniversal<K, V> extends ArrayMap<K, V> implements HashMapIn
     }
 
     public java.util.NavigableSet<K> keySet() {
-        return UnifiedMapUniversal.navigableSet(super.keySet());
+        return ArrayMapUniversal.navigableSet(super.keySet());
     }
 
     public ConcurrentNavigableMap<K, V> headMap(K __sm_arg_0) {
