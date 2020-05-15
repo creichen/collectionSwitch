@@ -8,12 +8,10 @@ import java.util.Map;
 import de.heidelberg.pvs.diego.collectionswitch.adaptive.AdaptiveMapUniversal;
 import de.heidelberg.pvs.diego.collectionswitch.THashMapUniversal;
 import de.heidelberg.pvs.diego.collectionswitch.UnifiedMapUniversal;
+import de.heidelberg.pvs.diego.collectionswitch.CompactHashMapUniversal;
 import de.heidelberg.pvs.diego.collectionswitch.nlp.ArrayMapUniversal;
 
-
-
 import net.openhft.koloboke.collect.map.hash.HashObjObjMaps;
-import vlsi.utils.CompactHashMap;
 
 public enum MapCollectionType {
 
@@ -59,7 +57,7 @@ public enum MapCollectionType {
                         return new ArrayMapUniversal<K, V>(initialCapacity);
 
                 case NAYUKI_COMPACTHASHMAP:
-                        return new CompactHashMap<K, V>();
+                        return new CompactHashMapUniversal<K, V>();
 
                 default:
                         return new HashMapUniversal<K, V>(initialCapacity);
@@ -97,7 +95,7 @@ public enum MapCollectionType {
                         return new ArrayMapUniversal<K, V>();
 
                 case NAYUKI_COMPACTHASHMAP:
-                        return new CompactHashMap<K, V>();
+                        return new CompactHashMapUniversal<K, V>();
 
                 default:
                         return new HashMapUniversal<K, V>();
@@ -136,7 +134,7 @@ public enum MapCollectionType {
                         return new ArrayMapUniversal<K, V>(mapToCopy);
 
                 case NAYUKI_COMPACTHASHMAP:
-                        Map<K, V> map2 = new CompactHashMap<K, V>();
+                        Map<K, V> map2 = new CompactHashMapUniversal<K, V>();
                         map2.putAll(mapToCopy);
                         return map2;
 
