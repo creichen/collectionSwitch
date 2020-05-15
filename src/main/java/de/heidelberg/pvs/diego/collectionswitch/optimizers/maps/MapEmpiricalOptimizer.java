@@ -139,7 +139,7 @@ public class MapEmpiricalOptimizer implements MapAllocationOptimizer {
         }
 
         @Override
-        public <K, V> Map<K, V> createHashMapInterfaceMonitor(HashMapInterface<K, V> map) {
+        public <K, V> HashMapInterface<K, V> createHashMapInterfaceMonitor(HashMapInterface<K, V> map) {
                 MapMetrics state = new MapMetrics(new WeakReference<Map<K, V>>(map));
                 collectionsState.add(state);
                 return new HashMapActiveFullMonitor<K, V>(map, state);
@@ -147,7 +147,7 @@ public class MapEmpiricalOptimizer implements MapAllocationOptimizer {
 
 
         @Override
-        public <K, V> Map<K, V> createTreeMapInterfaceMonitor(TreeMapInterface<K, V> map) {
+        public <K, V> TreeMapInterface<K, V> createTreeMapInterfaceMonitor(TreeMapInterface<K, V> map) {
                 MapMetrics state = new MapMetrics(new WeakReference<Map<K, V>>(map));
                 collectionsState.add(state);
                 return new TreeMapActiveFullMonitor<K, V>(map, state);
@@ -155,7 +155,7 @@ public class MapEmpiricalOptimizer implements MapAllocationOptimizer {
 
 
         @Override
-        public <K, V> Map<K, V> createLinkedHashMapInterfaceMonitor(LinkedHashMapInterface<K, V> map) {
+        public <K, V> LinkedHashMapInterface<K, V> createLinkedHashMapInterfaceMonitor(LinkedHashMapInterface<K, V> map) {
                 MapMetrics state = new MapMetrics(new WeakReference<Map<K, V>>(map));
                 collectionsState.add(state);
                 return new LinkedHashMapActiveFullMonitor<K, V>(map, state);
@@ -163,7 +163,7 @@ public class MapEmpiricalOptimizer implements MapAllocationOptimizer {
 
 
         @Override
-        public <K, V> Map<K, V> createConcurrentSkipListMapInterfaceMonitor(ConcurrentSkipListMapInterface<K, V> map) {
+        public <K, V> ConcurrentSkipListMapInterface<K, V> createConcurrentSkipListMapInterfaceMonitor(ConcurrentSkipListMapInterface<K, V> map) {
                 MapMetrics state = new MapMetrics(new WeakReference<Map<K, V>>(map));
                 collectionsState.add(state);
                 return new ConcurrentSkipListMapActiveFullMonitor<K, V>(map, state);

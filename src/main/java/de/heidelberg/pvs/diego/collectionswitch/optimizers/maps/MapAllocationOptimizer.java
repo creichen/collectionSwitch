@@ -15,15 +15,15 @@ public interface MapAllocationOptimizer extends AllocationOptimizer {
 
         void setContext(MapAllocationContext context);
 
-        public <K, V> Map<K, V> createHashMapInterfaceMonitor(HashMapInterface<K, V> map);
+        public <K, V> HashMapInterface<K, V> createHashMapInterfaceMonitor(HashMapInterface<K, V> map);
 
 
-        public <K, V> Map<K, V> createTreeMapInterfaceMonitor(TreeMapInterface<K, V> map);
+        public <K, V> TreeMapInterface<K, V> createTreeMapInterfaceMonitor(TreeMapInterface<K, V> map);
 
 
-        public <K, V> Map<K, V> createLinkedHashMapInterfaceMonitor(LinkedHashMapInterface<K, V> map);
+        public <K, V> LinkedHashMapInterface<K, V> createLinkedHashMapInterfaceMonitor(LinkedHashMapInterface<K, V> map);
 
-        public <K, V> Map<K, V> createConcurrentSkipListMapInterfaceMonitor(ConcurrentSkipListMapInterface<K, V> map);
+        public <K, V> ConcurrentSkipListMapInterface<K, V> createConcurrentSkipListMapInterfaceMonitor(ConcurrentSkipListMapInterface<K, V> map);
 
 
 }
