@@ -180,7 +180,8 @@ public class LinkedListActiveFullMonitor<E> implements List<E>, LinkedListInterf
     }
 
     public void addFirst(E __sm_arg_0) {
-        throw new java.lang.UnsupportedOperationException();
+        this.state.updateSize(1);
+        coll.add(__sm_arg_0);
     }
 
     public java.util.Iterator<E> descendingIterator() {
