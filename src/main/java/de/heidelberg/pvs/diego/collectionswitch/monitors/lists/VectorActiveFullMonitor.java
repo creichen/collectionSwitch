@@ -252,6 +252,10 @@ public class VectorActiveFullMonitor<E> implements List<E>, VectorInterface<E> {
 
     public void removeAllElements() {
         throw new java.lang.UnsupportedOperationException();
+
+    public E elementAt(int i) {
+        this.state.updateIndexOp(1);
+        return coll.elementAt(i);
     }
 
     public void addElement(E elem) {

@@ -235,4 +235,8 @@ public class AdaptiveListUniversal<E> extends AdaptiveList<E> implements LinkedL
     public java.lang.Object clone() throws java.lang.CloneNotSupportedException {
         throw new java.lang.CloneNotSupportedException();
     }
+
+    public E elementAt(int i) {
+        return this.get(i);
+    }
 }

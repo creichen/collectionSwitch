@@ -223,4 +223,9 @@ public class HashArrayListUniversal<E> extends HashArrayList<E> implements Linke
         }
         return false;
     }
+
+    @Override
+    public E elementAt(int i) {
+        return this.get(i);
+    }
 }
