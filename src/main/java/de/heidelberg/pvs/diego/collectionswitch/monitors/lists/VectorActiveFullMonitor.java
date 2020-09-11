@@ -261,6 +261,7 @@ public class VectorActiveFullMonitor<E> implements List<E>, VectorInterface<E> {
     }
 
     public void addElement(E elem) {
-        throw new java.lang.UnsupportedOperationException();
+        this.state.updateSize(1);
+        coll.add(elem);
     }
 }
