@@ -239,4 +239,8 @@ public class AdaptiveListUniversal<E> extends AdaptiveList<E> implements LinkedL
     public E elementAt(int i) {
         return this.get(i);
     }
+
+    public void ensureCapacity(int c) {}
+
+    public void trimToSize() {}
 }
