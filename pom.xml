@@ -61,14 +61,6 @@
                         <version>1.2.1</version>
                 </dependency>
 
-                <!-- https://mvnrepository.com/artifact/edu.stanford.nlp/stanford-corenlp -->
-                <!-- Stanford's NLP -->
-                <dependency>
-                        <groupId>edu.stanford.nlp</groupId>
-                        <artifactId>stanford-corenlp</artifactId>
-                        <version>3.7.0</version>
-                </dependency>
-
                 <!-- FAST UTIL -->
                 <dependency>
                         <groupId>it.unimi.dsi</groupId>
