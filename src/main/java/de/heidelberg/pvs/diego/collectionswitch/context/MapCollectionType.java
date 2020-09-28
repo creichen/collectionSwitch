@@ -65,6 +65,45 @@ public enum MapCollectionType {
 
         }
 
+        public <K, V> Map<K, V> createMap(int initialCapacity,
+                                          float loadFactor,
+                                          boolean accessOrder) {
+
+                switch (this) {
+
+                case JDK_HASHMAP:
+                        return new HashMapUniversal<K, V>(initialCapacity, loadFactor, accessOrder);
+
+                case KOLOBOKE_HASHMAP:
+                    throw new RuntimeException("KOLOBOKE_NOT_SUPPORTED");
+
+
+                case ONLINEADAPTER_ADAPTIVEMAP:
+                        return new AdaptiveMapUniversal<K, V>(initialCapacity, loadFactor, accessOrder);
+
+                case JDK_LINKEDHASHMAP:
+                        return new LinkedHashMapUniversal<K, V>(initialCapacity, loadFactor, accessOrder);
+
+                case FASTUTILS_HASHMAP:
+                        return new THashMapUniversal<K, V>(initialCapacity, loadFactor, accessOrder);
+
+                case GSCOLLECTIONS_UNIFIEDMAP:
+                        return new UnifiedMapUniversal<K, V>(initialCapacity, loadFactor, accessOrder);
+
+                case GOOGLE_ARRAYMAP:
+                        return new de.heidelberg.pvs.diego.collectionswitch.ArrayMapUniversal<K, V>();
+
+                case NLP_ARRAYMAP:
+                        return new ArrayMapUniversal<K, V>(initialCapacity, loadFactor, accessOrder);
+
+                case NAYUKI_COMPACTHASHMAP:
+                        return new CompactHashMapUniversal<K, V>();
+
+                default:
+                        return new HashMapUniversal<K, V>(initialCapacity, loadFactor, accessOrder);
+                }
+
+        }
         public <K, V> Map<K, V> createMap() {
 
 
@@ -175,7 +214,16 @@ public enum MapCollectionType {
             return (LinkedHashMapInterface) createMap(initialCapacity);
         }
 
+        public <K, V> LinkedHashMapInterface createLinkedHashMapInterface(int initialCapacity,
+                                                                          float loadFactor,
+                                                                          boolean accessOrder) {
+            return (LinkedHashMapInterface) createMap(initialCapacity,
+                                                      loadFactor,
+                                                      accessOrder);
+        }
+
         public <K, V> LinkedHashMapInterface createLinkedHashMapInterface(Map<K, V> c) {
+
             return (LinkedHashMapInterface) createMap(c);
         }
 

@@ -187,6 +187,20 @@ public class EmpiricalMapAllocationContext implements MapAllocationContextInfo {
 
     }
 
+    public <K, V> LinkedHashMapInterface createLinkedHashMapInterface(int initialCapacity,
+                                                                      float loadFactor,
+                                                                      boolean accessOrder) {
+
+        LinkedHashMapInterface<K, V> map = type.createLinkedHashMapInterface(initialCapacity,
+                                                                             loadFactor,
+                                                                             accessOrder);
+
+        if (instancesCount++ < windowSize) {
+            return (LinkedHashMapInterface) optimizer.createLinkedHashMapInterfaceMonitor(map);
+        }
+
+        return map;
+    }
 
     public <K, V> LinkedHashMapInterface createLinkedHashMapInterface(Map<K, V> mapToCopy) {
 
@@ -199,6 +213,7 @@ public class EmpiricalMapAllocationContext implements MapAllocationContextInfo {
         return map;
 
     }
+
 
 
     public <K, V> ConcurrentSkipListMapInterface createConcurrentSkipListMapInterface( ) {

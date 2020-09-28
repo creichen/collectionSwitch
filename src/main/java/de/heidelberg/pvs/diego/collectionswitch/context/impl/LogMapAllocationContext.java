@@ -125,6 +125,13 @@ public class LogMapAllocationContext implements MapAllocationContext {
             throw new java.lang.UnsupportedOperationException();
         }
 
+
+        public <K, V> LinkedHashMapInterface createLinkedHashMapInterface(int initialCapacity,
+                                                                          float loadFactor,
+                                                                          boolean accessOrder) {
+            throw new java.lang.UnsupportedOperationException();
+        }
+
         public <K, V> LinkedHashMapInterface createLinkedHashMapInterface(Map<K, V> mapToCopy) {
             throw new java.lang.UnsupportedOperationException();
         }

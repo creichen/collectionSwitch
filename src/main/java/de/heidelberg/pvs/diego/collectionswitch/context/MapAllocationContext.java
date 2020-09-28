@@ -33,6 +33,10 @@ public interface MapAllocationContext  extends AllocationContextUpdatable<MapCol
 
         public <K, V> LinkedHashMapInterface createLinkedHashMapInterface(Map<K, V> mapToCopy);
 
+        public <K, V> LinkedHashMapInterface createLinkedHashMapInterface(int initialCapacity,
+                                                                          float loadFactor,
+                                                                          boolean accessOrder);
+
         public <K, V> ConcurrentSkipListMapInterface createConcurrentSkipListMapInterface( );
 
         public <K, V> ConcurrentSkipListMapInterface createConcurrentSkipListMapInterface(int initialCapacity);
