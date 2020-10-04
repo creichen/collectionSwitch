@@ -101,18 +101,6 @@ public class LogSetAllocationContext implements SetAllocationContext {
             throw new java.lang.UnsupportedOperationException();
         }
 
-        public <E> TreeSetInterface createTreeSetInterface( ) {
-            throw new java.lang.UnsupportedOperationException();
-        }
-
-        public <E> TreeSetInterface createTreeSetInterface(int initialCapacity) {
-            throw new java.lang.UnsupportedOperationException();
-        }
-
-        public <E> TreeSetInterface createTreeSetInterface(Collection<? extends E> c) {
-            throw new java.lang.UnsupportedOperationException();
-        }
-
         public <E> LinkedHashSetInterface createLinkedHashSetInterface( ) {
             throw new java.lang.UnsupportedOperationException();
         }

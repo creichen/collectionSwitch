@@ -102,45 +102,6 @@ public class EmpiricalSetAllocationContext  implements SetAllocationContextInfo 
     }
 
 
-    public <E> TreeSetInterface createTreeSetInterface( ) {
-
-        TreeSetInterface<E> set = type.createTreeSetInterface();
-
-        if (instancesCount++ < windowSize) {
-            return (TreeSetInterface) optimizer.createTreeSetInterfaceMonitor(set);
-        }
-
-        return set;
-
-    }
-
-
-    public <E> TreeSetInterface createTreeSetInterface(int initialCapacity) {
-
-        TreeSetInterface<E> set = type.createTreeSetInterface(initialCapacity);
-
-        if (instancesCount++ < windowSize) {
-            return (TreeSetInterface) optimizer.createTreeSetInterfaceMonitor(set);
-        }
-
-        return set;
-
-    }
-
-
-    public <E> TreeSetInterface createTreeSetInterface(Collection<? extends E> c) {
-
-        TreeSetInterface<E> set = type.createTreeSetInterface(c);
-
-        if (instancesCount++ < windowSize) {
-            return (TreeSetInterface) optimizer.createTreeSetInterfaceMonitor(set);
-        }
-
-        return set;
-
-    }
-
-
     public <E> LinkedHashSetInterface createLinkedHashSetInterface( ) {
 
         LinkedHashSetInterface<E> set = type.createLinkedHashSetInterface();

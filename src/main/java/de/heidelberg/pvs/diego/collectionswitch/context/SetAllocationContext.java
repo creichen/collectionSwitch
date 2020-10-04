@@ -20,11 +20,15 @@ public interface SetAllocationContext extends AllocationContextUpdatable<SetColl
 
         public <E> HashSetInterface createHashSetInterface(Collection<? extends E> c);
 
+        /* TreeSets are actually never replaced by the original CollectionSwitch!
         public <E> TreeSetInterface createTreeSetInterface( );
 
         public <E> TreeSetInterface createTreeSetInterface(int initialCapacity);
 
         public <E> TreeSetInterface createTreeSetInterface(Collection<? extends E> c);
+
+        public <E> TreeSetInterface createTreeSetInterface(Comparator<? super E> c);
+        */
 
         public <E> LinkedHashSetInterface createLinkedHashSetInterface( );
 
