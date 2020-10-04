@@ -1,12 +1,12 @@
 package de.heidelberg.pvs.diego.collectionswitch.context;
 
 import java.util.Collection;
-import se.lth.util.HashSetUniversal;
-import se.lth.util.LinkedHashSetUniversal;
 import java.util.Set;
 
 import se.lth.util.*;
 import se.lth.util.concurrent.*;
+import se.lth.util.HashSetUniversal;
+import se.lth.util.LinkedHashSetUniversal;
 
 import de.heidelberg.pvs.diego.collectionswitch.adaptive.AdaptiveSetUniversal;
 import de.heidelberg.pvs.diego.collectionswitch.THashSetUniversal;
