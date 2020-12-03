@@ -32,12 +32,12 @@
                         <systemPath>${project.basedir}/external-jars/smrt-run.jar</systemPath>
                 </dependency>
 
-                <!-- JUNIT -->
-                <dependency>
-                        <groupId>junit</groupId>
-                        <artifactId>junit</artifactId>
-                        <version>4.11</version>
-                </dependency>
+		<!-- JUNIT -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.13.1</version>
+		</dependency>
 
                 <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-math3 -->
                 <dependency>
