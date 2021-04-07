@@ -106,6 +106,6 @@ public class HashSetActiveFullMonitor<E> implements Set<E>, HashSetInterface<E> 
     }
 
     public java.lang.String toString() {
-        throw new UnsupportedOperationException();
+        return coll.toString();
     }
 }
