@@ -8,7 +8,7 @@ import java.util.Set;
 import se.lth.util.*;
 import se.lth.util.concurrent.*;
 
-public class LinkedHashMapActiveFullMonitor<K, V> implements Map<K, V>, LinkedHashMapInterface<K, V> {
+public class LinkedHashMapActiveFullMonitor<K, V> implements Map<K, V>, LinkedHashMapInterface<K, V>, HashMapInterface<K, V> {
         private LinkedHashMapInterface<K, V> coll;
         private MapMetrics state;
 
