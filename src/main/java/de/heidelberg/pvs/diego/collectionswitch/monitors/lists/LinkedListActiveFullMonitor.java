@@ -249,7 +249,10 @@ public class LinkedListActiveFullMonitor<E> implements List<E>, LinkedListInterf
     }
 
     public E removeFirst() {
-        throw new java.lang.UnsupportedOperationException();
+        // state.updateContainsOp(1); Not called, we just remove the first element
+        state.updateSize(-1);
+        E removed = coll.removeFirst();
+        return removed;
     }
 
     public boolean removeFirstOccurrence(java.lang.Object __sm_arg_0) {
