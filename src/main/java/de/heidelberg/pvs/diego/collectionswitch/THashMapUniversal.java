@@ -9,7 +9,7 @@ import java.util.function.BiFunction;
 
 import gnu.trove.map.hash.THashMap;
 
-public class THashMapUniversal<K, V> extends THashMap<K, V> implements HashMapInterface<K, V>, TreeMapInterface<K, V>, LinkedHashMapInterface<K, V>, ConcurrentSkipListMapInterface<K, V> {
+public class THashMapUniversal<K, V> extends THashMap<K, V> implements HashMapInterface<K, V>, TreeMapInterface<K, V>, LinkedHashMapInterface<K, V> {
     public THashMapUniversal() {
         super();
     }

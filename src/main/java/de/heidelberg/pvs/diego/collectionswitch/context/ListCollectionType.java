@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
-
 import se.lth.util.*;
 
 import de.heidelberg.pvs.diego.collectionswitch.adaptive.AdaptiveList;

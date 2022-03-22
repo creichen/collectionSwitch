@@ -90,7 +90,7 @@ public class ConcurrentSkipListMapActiveFullMonitor<K, V> implements Map<K, V>, 
         }
 
 
-    public java.lang.Object clone() throws java.lang.CloneNotSupportedException {
+    public java.util.concurrent.ConcurrentSkipListMap<K, V> clone() throws java.lang.CloneNotSupportedException {
         throw new UnsupportedOperationException();
     }
 

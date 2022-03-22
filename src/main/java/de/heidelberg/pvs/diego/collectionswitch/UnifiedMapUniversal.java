@@ -8,7 +8,7 @@ import se.lth.util.*;
 import java.util.function.BiFunction;
 import org.eclipse.collections.impl.map.mutable.UnifiedMap;
 
-public class UnifiedMapUniversal<K, V> extends UnifiedMap<K, V> implements HashMapInterface<K, V>, TreeMapInterface<K, V>, LinkedHashMapInterface<K, V>, ConcurrentSkipListMapInterface<K, V> {
+public class UnifiedMapUniversal<K, V> extends UnifiedMap<K, V> implements HashMapInterface<K, V>, TreeMapInterface<K, V>, LinkedHashMapInterface<K, V> {
     public UnifiedMapUniversal() {
         super();
     }

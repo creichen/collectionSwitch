@@ -21,7 +21,14 @@ Maven
 
 ### Installing
 
-You can simply install the CollectionSwitch by running `mvn install` in the project.
+This version of the CollectionSwitch has a local dependency on `smrt.jar`, which is not in any
+public repository, so first run:
+
+```
+./configure.py ../${PATH_TO}/smrt.jar
+```
+
+You then can simply install the CollectionSwitch by running `mvn install` in the project.
 
 ## Using CollectionSwitch Context
 
@@ -45,5 +52,9 @@ List<T> list = ctx.createList();
 
 * **Diego Costa** - [] 
 
+With adaptations to smrt by:
+
+* **Noric Couderc**
+* **Christoph Reichenbach**
 
 

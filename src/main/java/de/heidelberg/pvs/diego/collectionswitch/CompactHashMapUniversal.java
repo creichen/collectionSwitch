@@ -193,7 +193,7 @@ public class CompactHashMapUniversal<K, V> extends CompactHashMap<K, V> implemen
         throw new java.lang.UnsupportedOperationException();
     }
 
-    public java.lang.Object clone() throws java.lang.CloneNotSupportedException {
+    public ConcurrentSkipListMap<K, V> clone() throws java.lang.CloneNotSupportedException {
         throw new java.lang.CloneNotSupportedException();
     }
 

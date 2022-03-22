@@ -21,15 +21,7 @@
                         <artifactId>smrt</artifactId>
                         <version>0.1</version>
                         <scope>system</scope>
-                        <systemPath>${project.basedir}/external-jars/smrt.jar</systemPath>
-                </dependency>
-
-                <dependency>
-                        <groupId>se.lth.cs</groupId>
-                        <artifactId>smrt-run</artifactId>
-                        <version>0.1</version>
-                        <scope>system</scope>
-                        <systemPath>${project.basedir}/external-jars/smrt-run.jar</systemPath>
+                        <systemPath>/home/creichen/uni/18/experimental-setup-2/smjava-collection-replacement/dist/smrt.jar</systemPath>
                 </dependency>
 
 		<!-- JUNIT -->
@@ -61,19 +53,19 @@
                         <version>1.2.1</version>
                 </dependency>
 
-                <!-- FAST UTIL -->
-                <dependency>
-                        <groupId>it.unimi.dsi</groupId>
-                        <artifactId>fastutil</artifactId>
-                        <version>7.0.10</version>
-                </dependency>
-
                 <!-- https://mvnrepository.com/artifact/edu.stanford.nlp/stanford-corenlp -->
                 <!-- Stanford's NLP -->
                 <dependency>
                         <groupId>edu.stanford.nlp</groupId>
                         <artifactId>stanford-corenlp</artifactId>
                         <version>3.7.0</version>
+                </dependency>
+
+                <!-- FAST UTIL -->
+                <dependency>
+                        <groupId>it.unimi.dsi</groupId>
+                        <artifactId>fastutil</artifactId>
+                        <version>7.0.10</version>
                 </dependency>
 
                 <!-- APACHE COMMONS -->
@@ -106,6 +98,13 @@
 
                 <dependency>
                         <groupId>org.eclipse.collections</groupId>
+                        <artifactId>eclipse-collections-testutils</artifactId>
+                        <version>8.0.0</version>
+                        <scope>test</scope>
+                </dependency>
+
+                <dependency>
+                        <groupId>org.eclipse.collections</groupId>
                         <artifactId>eclipse-collections-forkjoin</artifactId>
                         <version>8.0.0</version>
                 </dependency>
@@ -115,13 +114,6 @@
                         <groupId>org.openjdk.jol</groupId>
                         <artifactId>jol-core</artifactId>
                         <version>0.5</version>
-                </dependency>
-
-                <dependency>
-                        <groupId>org.eclipse.collections</groupId>
-                        <artifactId>eclipse-collections-testutils</artifactId>
-                        <version>8.0.0</version>
-                        <scope>test</scope>
                 </dependency>
 
                 <!-- JLIBS -->
@@ -143,7 +135,6 @@
         <build>
                 <sourceDirectory>src</sourceDirectory>
                 <plugins>
-
                         <!-- MAVEN COMPILER -->
                         <plugin>
                                 <artifactId>maven-compiler-plugin</artifactId>

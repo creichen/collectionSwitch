@@ -6,7 +6,7 @@ import java.util.concurrent.*;
 import se.lth.util.concurrent.*;
 import se.lth.util.*;
 
-public class AdaptiveMapUniversal<K, V> extends AdaptiveMap<K, V> implements HashMapInterface<K, V>, TreeMapInterface<K, V>, LinkedHashMapInterface<K, V>, ConcurrentSkipListMapInterface<K, V> {
+public class AdaptiveMapUniversal<K, V> extends AdaptiveMap<K, V> implements HashMapInterface<K, V>, TreeMapInterface<K, V>, LinkedHashMapInterface<K, V> {
     public AdaptiveMapUniversal() {
         super();
     }

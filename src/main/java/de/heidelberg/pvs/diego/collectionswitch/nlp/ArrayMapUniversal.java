@@ -193,7 +193,7 @@ public class ArrayMapUniversal<K, V> extends ArrayMap<K, V> implements HashMapIn
         throw new java.lang.UnsupportedOperationException();
     }
 
-    public java.lang.Object clone() throws java.lang.CloneNotSupportedException {
+    public java.util.concurrent.ConcurrentSkipListMap<K, V> clone() throws java.lang.CloneNotSupportedException {
         throw new java.lang.CloneNotSupportedException();
     }
 

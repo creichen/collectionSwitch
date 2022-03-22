@@ -1,5 +1,10 @@
 /target/
 /bin/
 /.classpath
+.config.json
+.config.properties
+.config.sh
+pom.xml
 /.project
 *~
+

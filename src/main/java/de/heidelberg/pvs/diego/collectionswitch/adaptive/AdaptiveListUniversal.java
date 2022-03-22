@@ -224,6 +224,14 @@ public class AdaptiveListUniversal<E> extends AdaptiveList<E> implements LinkedL
         return false;
     }
 
+    @Override
+    public void ensureCapacity(int capacity) {
+    }
+
+    @Override
+    public void trimToSize() {
+    }
+
     public java.util.Spliterator<E> spliterator() {
         throw new RuntimeException("NOT IMPLEMENTED");
     }
@@ -239,8 +247,4 @@ public class AdaptiveListUniversal<E> extends AdaptiveList<E> implements LinkedL
     public E elementAt(int i) {
         return this.get(i);
     }
-
-    public void ensureCapacity(int c) {}
-
-    public void trimToSize() {}
 }

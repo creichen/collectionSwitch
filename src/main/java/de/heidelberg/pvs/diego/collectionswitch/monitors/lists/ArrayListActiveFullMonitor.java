@@ -257,4 +257,9 @@ public class ArrayListActiveFullMonitor<E> implements List<E>, ArrayListInterfac
     public void addElement(E elem) {
         throw new java.lang.UnsupportedOperationException();
     }
+
+    @Override
+    public void ensureCapacity(int capacity) {}
+    @Override
+    public void trimToSize() {}
 }

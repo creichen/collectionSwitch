@@ -8,7 +8,7 @@ import se.lth.util.*;
 import java.util.function.BiFunction;
 import com.google.api.client.util.ArrayMap;
 
-public class ArrayMapUniversal<K, V> extends ArrayMap<K, V> implements HashMapInterface<K, V>, TreeMapInterface<K, V>, LinkedHashMapInterface<K, V>, ConcurrentSkipListMapInterface<K, V> {
+public class ArrayMapUniversal<K, V> extends ArrayMap<K, V> implements HashMapInterface<K, V>, TreeMapInterface<K, V>, LinkedHashMapInterface<K, V> {
     public ArrayMapUniversal() {
         super();
     }
